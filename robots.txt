@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://seshpdxphotos.vercel.app/sitemap.xml

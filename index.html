@@ -1,0 +1,506 @@
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>seshpdx — Live Music Photography by Spencer Gray</title>
+<meta name="description" content="Portland, from the pit. Live-music photographs by Spencer Gray: 272 frames and an annotated show archive spanning 2018–2024.">
+<link rel="canonical" href="https://seshpdxphotos.vercel.app/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="seshpdx — Portland, from the pit.">
+<meta property="og:description" content="Live-music photography by Spencer Gray. Explore the contact sheet and show archive, 2018–2024.">
+<meta property="og:url" content="https://seshpdxphotos.vercel.app/">
+<meta property="og:image" content="https://seshpdxphotos.vercel.app/img/f001.jpg">
+<meta property="og:image:alt" content="Mt. Joy photographed by Spencer Gray at Doug Fir Lounge, Portland.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* v2: the sheet (every frame, shooting order) → the index (one row per show, opens to tour / record / then / since / evidence / sources)
+   → since the pit (who went on to more) → about. Tokens: seshpdx Contact Sheet v1.1. Yellow is spent on the select marks only. */
+:root{
+  --bg-canvas:#eef0ec; --bg-surface:#e4e7e1; --bg-raised:#ffffff; --bg-sunken:#d9dcd5;
+  --fg-primary:#16181b; --fg-secondary:#3a403b; --fg-muted:#5a615c;
+  --border-subtle:#d9dcd5; --border-default:#c3c8c0; --border-strong:#16181b; --border-control:#5a615c;
+  --accent:#ffe600; --on-accent:#0e0f11; --accent-text:#16181b; --focus:#16181b;
+  --photo-mat:#08090a; --on-photo:#eef0ec; --on-photo-muted:#c3c8c0; --scrim:#08090a99;
+  --font-display:"Archivo Black","Archivo",system-ui,sans-serif;
+  --font-body:"Archivo",system-ui,sans-serif;
+  --font-mono:"Space Mono",ui-monospace,monospace;
+  --space-3xs:2px; --space-2xs:4px; --space-xs:8px; --space-sm:12px; --space-md:16px; --space-lg:24px; --space-xl:32px; --space-2xl:48px; --space-3xl:64px;
+  --ease:cubic-bezier(.2,.6,.2,1);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg-canvas:#0e0f11; --bg-surface:#16181b; --bg-raised:#262a2c; --bg-sunken:#08090a;
+  --fg-primary:#eef0ec; --fg-secondary:#c3c8c0; --fg-muted:#878e89;
+  --border-subtle:#16181b; --border-default:#262a2c; --border-strong:#eef0ec; --border-control:#5a615c;
+  --accent-text:#ffe600; --focus:#ffe600; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg-canvas:#0e0f11; --bg-surface:#16181b; --bg-raised:#262a2c; --bg-sunken:#08090a;
+  --fg-primary:#eef0ec; --fg-secondary:#c3c8c0; --fg-muted:#878e89;
+  --border-subtle:#16181b; --border-default:#262a2c; --border-strong:#eef0ec; --border-control:#5a615c;
+  --accent-text:#ffe600; --focus:#ffe600; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg-canvas);color:var(--fg-primary);font:400 16px/1.65 var(--font-body);margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg-canvas)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+.wrap{max-width:1440px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+@media (min-width:768px){.wrap{padding-left:max(32px, env(safe-area-inset-left, 0px));padding-right:max(32px, env(safe-area-inset-right, 0px))}}
+@media (min-width:1024px){.wrap{padding-left:max(64px, env(safe-area-inset-left, 0px));padding-right:max(64px, env(safe-area-inset-right, 0px))}}
+.mono{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;font-size:12px;line-height:1.4;font-variant-numeric:tabular-nums}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg-canvas);border-bottom:1px solid var(--border-subtle)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);height:56px}
+.wm{font-family:var(--font-display);font-size:13px;line-height:1;text-transform:lowercase;background:var(--accent);color:var(--on-accent);padding:var(--space-3xs) var(--space-xs);text-decoration:none}
+.nav{display:flex;gap:var(--space-lg)}
+.nav a{font:600 13px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-secondary);text-decoration:none;padding:var(--space-xs) 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--fg-primary);border-bottom-color:var(--fg-primary)}
+@media (max-width:519px){.nav{gap:var(--space-sm)}.nav a{font-size:11px;letter-spacing:.06em}}
+@media (min-width:1024px){.top .wrap{height:64px}}
+
+/* intro */
+.intro{display:grid;gap:var(--space-md);padding-block:var(--space-xl) var(--space-lg);align-items:end}
+@media (min-width:900px){.intro{grid-template-columns:minmax(0,1fr) auto;padding-block:var(--space-2xl) var(--space-lg)}}
+.line{margin:0;font-family:var(--font-display);font-weight:400;font-size:clamp(44px,9vw,104px);line-height:.92;letter-spacing:-.02em;text-transform:lowercase;text-wrap:balance}
+.by{display:flex;flex-direction:column;gap:var(--space-2xs);color:var(--fg-muted)}
+@media (min-width:900px){.by{text-align:right;padding-bottom:var(--space-xs)}}
+.by strong{color:var(--fg-primary);font-weight:700}
+
+/* the sheet */
+.sheethead{display:flex;justify-content:space-between;align-items:center;gap:var(--space-md);padding:var(--space-xs) 0;border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default);color:var(--fg-secondary);margin-bottom:var(--space-md)}
+.sheethead b{color:var(--fg-primary);font-weight:700}
+.legend{display:inline-flex;align-items:center;gap:var(--space-xs);color:var(--fg-muted);flex:none}
+.legend svg{width:22px;height:15px;overflow:visible}
+.sheet{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3xs);padding:var(--space-xs);background:var(--photo-mat);margin:0;list-style:none}
+@media (min-width:640px){.sheet{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.sheet{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:1200px){.sheet{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.sheet li{min-width:0}
+.cell{position:relative;display:flex;flex-direction:column;width:100%;padding:0;border:0;background:var(--photo-mat);color:var(--on-photo-muted);cursor:zoom-in;text-align:left}
+.cell .reb{position:relative;z-index:2;display:flex;justify-content:space-between;gap:var(--space-xs);height:20px;align-items:center;padding:0 var(--space-xs);font:400 10px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}
+.cell .reb span:last-child{overflow:hidden;text-overflow:ellipsis}
+.cell .reb.b{height:8px}
+.cell .img{position:relative;aspect-ratio:3/2;overflow:hidden}
+.cell img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform 350ms var(--ease)}
+.cell:hover img{transform:scale(1.02)}
+.mark{position:absolute;z-index:1;inset:-5px;width:calc(100% + 10px);height:calc(100% + 10px);overflow:visible;pointer-events:none;opacity:0;transition:opacity 120ms}
+.mark path{fill:none;stroke:var(--accent);stroke-width:3px;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.cell:hover .mark,.cell:focus-visible .mark{opacity:.65}
+.cell:hover .mark path,.cell:focus-visible .mark path{animation:draw 220ms var(--ease) both}
+.cell.sel{z-index:1}
+.cell.sel .mark{opacity:1}
+.cell.sel:hover .mark path{animation:none}
+.cell:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+@keyframes draw{from{stroke-dasharray:2000;stroke-dashoffset:2000}to{stroke-dasharray:2000;stroke-dashoffset:0}}
+
+/* sections */
+section{scroll-margin-top:72px}
+.sec{padding-block:var(--space-3xl) 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--space-md);flex-wrap:wrap;padding-bottom:var(--space-md)}
+.sh p{margin:0 0 var(--space-xs);color:var(--fg-muted)}
+.sh h2{margin:0;font-family:var(--font-display);font-weight:400;font-size:clamp(32px,4.5vw,48px);line-height:.96;letter-spacing:-.015em;text-transform:lowercase}
+.dek{margin:0 0 var(--space-lg);max-width:65ch;color:var(--fg-secondary)}
+
+/* index controls */
+.ctl{display:flex;flex-wrap:wrap;gap:var(--space-sm);align-items:center;padding:var(--space-sm) 0;border-top:1px solid var(--border-default)}
+.field{position:relative;flex:1 1 240px;max-width:420px}
+.field input{width:100%;height:44px;padding:0 var(--space-sm) 0 38px;font:400 16px/1 var(--font-body);color:var(--fg-primary);background:var(--bg-raised);border:1px solid var(--border-control);border-radius:2px}
+.field input::placeholder{color:var(--fg-muted)}
+.field svg{position:absolute;left:12px;top:50%;width:18px;height:18px;transform:translateY(-50%);color:var(--fg-muted);pointer-events:none}
+.seg{display:inline-flex;border:1px solid var(--border-control);border-radius:2px;overflow:hidden}
+.seg button{height:42px;padding:0 var(--space-sm);border:0;border-right:1px solid var(--border-default);background:transparent;font:400 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fg-secondary);cursor:pointer;font-variant-numeric:tabular-nums}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--fg-primary);color:var(--bg-canvas)}
+.seg button:focus-visible{outline-offset:-3px}
+@media (max-width:519px){.seg{width:100%}.seg button{flex:1 1 0;padding:0 var(--space-2xs)}}
+.rooms{display:flex;flex-wrap:wrap;gap:var(--space-xs);align-items:center;padding:0 0 var(--space-md);color:var(--fg-muted)}
+.rooms button{height:28px;padding:0 var(--space-xs);border:1px solid var(--border-default);border-radius:2px;background:transparent;font:400 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--fg-secondary);cursor:pointer;font-variant-numeric:tabular-nums}
+.rooms button:hover{border-color:var(--border-strong);color:var(--fg-primary)}
+
+/* the index */
+.shows{border-top:1px solid var(--border-default)}
+.show{border-bottom:1px solid var(--border-subtle);scroll-margin-top:72px}
+.srow{display:grid;grid-template-columns:96px minmax(0,1fr) auto;grid-template-areas:"d who n" "d where n";column-gap:var(--space-sm);row-gap:var(--space-3xs);align-items:center;width:100%;min-height:64px;padding:var(--space-sm) 0;border:0;background:transparent;text-align:left;cursor:pointer}
+.srow:hover{background:var(--bg-surface)}
+.srow .d{grid-area:d;color:var(--fg-muted);align-self:start;padding-top:3px}
+.srow .who{grid-area:who;min-width:0}
+.srow .h{font:600 18px/1.25 var(--font-body)}
+.srow .bill{color:var(--fg-muted);font-size:14px}
+.srow .where{grid-area:where;color:var(--fg-secondary);min-width:0;display:flex;flex-wrap:wrap;gap:var(--space-2xs) var(--space-xs);align-items:center}
+.srow .n{grid-area:n;display:flex;align-items:center;gap:var(--space-xs);color:var(--fg-muted)}
+.srow .n svg{width:18px;height:18px;transition:transform 200ms var(--ease)}
+.srow[aria-expanded="true"] .n svg{transform:rotate(180deg)}
+@media (min-width:900px){
+  .srow{grid-template-columns:132px minmax(0,1.2fr) minmax(0,1fr) 72px;grid-template-areas:"d who where n";min-height:56px}
+  .srow .d{align-self:center;padding-top:0}
+  .srow .n{justify-content:flex-end}
+}
+.tag{display:inline-flex;align-items:center;gap:6px;height:20px;padding:0 6px;border:1px solid var(--border-default);border-radius:2px;font:400 10px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fg-muted);white-space:nowrap}
+.tag i{display:block;width:7px;height:7px;border-radius:50%;border:1.5px solid currentColor}
+.tag.ok i{background:currentColor}
+.tag.ok{color:var(--fg-secondary)}
+.un{color:var(--fg-muted);font-style:normal}
+
+.sdet{padding:0 0 var(--space-xl)}
+@media (min-width:900px){.sdet{padding-left:calc(132px + var(--space-sm))}}
+.thumbs{display:flex;gap:var(--space-3xs);overflow-x:auto;padding:var(--space-xs);background:var(--photo-mat);margin-bottom:var(--space-lg);scrollbar-width:thin}
+.thumbs .cell{flex:0 0 auto;width:min(46vw,220px)}
+.notes{display:grid;gap:var(--space-sm) var(--space-lg);margin:0;max-width:880px}
+@media (min-width:640px){.notes{grid-template-columns:120px minmax(0,1fr)}}
+.notes dt{color:var(--fg-muted);padding-top:3px}
+.notes dd{margin:0;max-width:65ch;color:var(--fg-primary)}
+.notes dd.ev{color:var(--fg-secondary);font-size:14px}
+.notes ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:var(--space-2xs)}
+.notes ul a{font-size:14px;color:var(--fg-secondary);text-underline-offset:3px;text-decoration-color:var(--border-default)}
+.notes ul a:hover{color:var(--fg-primary);text-decoration-color:currentColor}
+.empty{padding:var(--space-xl) 0;color:var(--fg-muted)}
+
+/* since the pit */
+.since{margin:0;padding:0;list-style:none;border-top:1px solid var(--border-default)}
+.since li{border-bottom:1px solid var(--border-subtle)}
+.since button{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-2xs);width:100%;padding:var(--space-md) 0;border:0;background:transparent;text-align:left;cursor:pointer}
+.since button:hover{background:var(--bg-surface)}
+@media (min-width:900px){.since button{grid-template-columns:minmax(0,4fr) minmax(0,3fr) minmax(0,6fr);gap:var(--space-lg);align-items:baseline}}
+.since .who{font:400 clamp(22px,2.4vw,30px)/1.05 var(--font-display);text-transform:lowercase;letter-spacing:-.01em}
+.since .then{color:var(--fg-muted)}
+.since .now{color:var(--fg-primary);max-width:60ch}
+
+/* about + contact */
+.about{display:grid;gap:var(--space-xl)}
+@media (min-width:900px){.about{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--space-3xl)}}
+.about p.lede{margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.6;max-width:60ch}
+.about p.lede+p.lede{margin-top:var(--space-md)}
+.kit{margin:0;padding:0;list-style:none;border-top:1px solid var(--border-default)}
+.kit li{display:flex;justify-content:space-between;gap:var(--space-md);padding:var(--space-xs) 0;border-bottom:1px solid var(--border-subtle);color:var(--fg-secondary)}
+.kit li span:last-child{color:var(--fg-muted)}
+.kitlabel{margin:0 0 var(--space-sm);color:var(--fg-muted)}
+.contact{display:grid;gap:var(--space-lg);padding-block:var(--space-xl);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default)}
+@media (min-width:900px){.contact{grid-template-columns:minmax(0,1fr) auto;align-items:end}}
+.contact h3{margin:0;font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4vw,40px);line-height:1;text-transform:lowercase;letter-spacing:-.01em;text-wrap:balance}
+.mailrow{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-sm)}
+.mail{font:400 clamp(14px,1.6vw,18px)/1.3 var(--font-mono);letter-spacing:.02em;user-select:all;-webkit-user-select:all;word-break:break-all}
+.btn{display:inline-flex;align-items:center;gap:var(--space-xs);height:40px;padding:0 var(--space-md);font:600 14px/16px var(--font-body);color:var(--fg-primary);background:transparent;border:2px solid var(--border-strong);border-radius:2px;cursor:pointer}
+.btn:hover{background:var(--bg-sunken)}
+.btn svg{width:16px;height:16px}
+.toast{position:fixed;left:50%;bottom:calc(var(--space-lg) + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;align-items:center;gap:var(--space-sm);min-height:48px;padding:var(--space-sm) var(--space-md);background:var(--bg-raised);border:1px solid var(--border-default);font-size:14px;z-index:60}
+.toast[hidden]{display:none}
+.toast i{width:8px;height:8px;background:var(--fg-primary);display:block;flex:none}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:var(--space-lg);padding-block:var(--space-2xl);color:var(--fg-muted)}
+footer .wmi{font-family:var(--font-display);font-size:20px;line-height:1;text-transform:lowercase;color:var(--fg-primary);margin:0 0 var(--space-xs)}
+footer p{margin:0}
+footer .credit{font-size:10px;letter-spacing:.08em}
+@media (min-width:640px){footer .credit{text-align:right}}
+
+/* frame strip (caption laminate) */
+.strip{display:flex;align-items:center;gap:var(--space-xs);min-height:32px;padding:var(--space-xs) 0;min-width:0}
+.strip .s{font-weight:700;flex:none}
+.strip .f{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.strip .sp{flex:1 1 0}
+.strip .sep,.strip .n{flex:none}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;background:var(--photo-mat);color:var(--on-photo);padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+.lb[hidden]{display:none}
+.lb-top{display:flex;justify-content:space-between;align-items:center;height:56px;padding:0 var(--space-md);flex:none}
+.lb-count{font:700 14px/1 var(--font-mono);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.ib{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;border:0;border-radius:2px;background:transparent;color:var(--on-photo);cursor:pointer}
+.ib:hover{background:var(--scrim)}
+.ib:focus-visible{outline:2px solid var(--accent);outline-offset:0}
+.ib svg{width:24px;height:24px}
+.lb-stage{position:relative;flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 var(--space-md);touch-action:pan-y}
+.lb-stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:opacity 200ms var(--ease)}
+.lb-stage img.loading{opacity:.2}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%)}
+.lb-prev{left:var(--space-md)}.lb-next{right:var(--space-md)}
+@media (max-width:767px){.lb-prev,.lb-next{top:auto;bottom:var(--space-xs);transform:none}}
+.lb .strip{padding:var(--space-sm) var(--space-md);background:var(--scrim);color:var(--on-photo);flex:none;margin-top:var(--space-xs)}
+.lb .strip .sep,.lb .strip .n{color:var(--on-photo-muted)}
+.lb-note{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--space-2xs) var(--space-md);margin:0;padding:var(--space-xs) var(--space-md) var(--space-sm);font-size:14px;line-height:1.5;color:var(--on-photo-muted);flex:none}
+.lb-note span{max-width:72ch}
+.lb-note button{border:0;background:transparent;padding:0;color:var(--on-photo);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font:400 11px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:767px){.lb-note{padding-bottom:64px}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
+</head><body>
+<header class="top">
+  <div class="wrap">
+    <a class="wm" href="#sheet" aria-label="seshpdx, back to the sheet">seshpdx</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#index">Index</a>
+      <a href="#since">Since</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="intro">
+      <h1 class="line">portland, from the pit.</h1>
+      <div class="by mono"><span>photographs by <strong>spencer gray</strong></span><span id="countline"></span></div>
+    </div>
+
+    <section id="sheet" aria-label="The sheet">
+      <div class="sheethead mono">
+        <span><b>SESH</b> ▸ the sheet · in shooting order</span>
+        <span class="legend"><svg viewBox="0 0 100 66" preserveAspectRatio="none" aria-hidden="true"><path d="M3 6 C30 2 70 3 97 4 C99 24 98 46 96 62 C70 65 31 64 5 62 C2 46 3 24 1 8 L9 3" fill="none" stroke="var(--accent)" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linecap="round"/></svg>select</span>
+      </div>
+      <ul class="sheet" id="sheetgrid"></ul>
+    </section>
+
+    <section id="index" class="sec" aria-labelledby="index-h">
+      <div class="sh"><div><p class="mono" id="idxcount"></p><h2 id="index-h">the index</h2></div></div>
+      <p class="dek">Every show in the archive, with the tour, the record, where the artist was then and what they've done since. Each entry says how it was identified. Anything not yet confirmed is left blank.</p>
+      <div class="ctl">
+        <label class="field"><span class="vh">Filter shows</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="search" placeholder="Artist, venue, tour or record" autocomplete="off">
+        </label>
+        <div class="seg" role="group" aria-label="Year" id="years"></div>
+      </div>
+      <div class="rooms mono" id="rooms"><span>rooms</span></div>
+      <div class="shows" id="shows"></div>
+      <p class="empty" id="empty" hidden>Nothing on file for that. Try a room, like holocene.</p>
+    </section>
+
+    <section id="since" class="sec" aria-labelledby="since-h">
+      <div class="sh"><div><p class="mono">shot early · what came after</p><h2 id="since-h">since the pit</h2></div></div>
+      <ul class="since" id="sincelist"></ul>
+    </section>
+
+    <section id="about" class="sec" aria-labelledby="about-h">
+      <div class="sh"><div><p class="mono">self-taught · 2018–2024</p><h2 id="about-h">about</h2></div></div>
+      <div class="about">
+        <div>
+          <p class="lede">seshpdx is Spencer Gray's live-music photography, shot from the photo pit. Most of it is from Portland's small rooms, Holocene, the Doug Fir, Wonder Ballroom and the Crystal, and often from an artist's first headline run.</p>
+          <p class="lede">The sheet is built from the full-resolution files: the finished edits first, then the raws, matched to each night by the camera's capture time. The index was rebuilt from folder names, keywords, capture times, GPS and signage in the frames, then checked against setlist archives, venue listings and press. Where a show couldn't be confirmed, the entry says so.</p>
+        </div>
+        <div>
+          <p class="mono kitlabel">cameras, by the metadata</p>
+          <ul class="kit mono">
+            <li><span>Nikon D3300</span><span>2018</span></li>
+            <li><span>Nikon D7500</span><span>2019–2020</span></li>
+            <li><span>Nikon D850</span><span>2021–2024</span></li>
+            <li><span>iPhone 14 Pro</span><span>2024</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="sec" aria-labelledby="contact-h">
+      <div class="contact">
+        <div>
+          <p class="mono" style="margin:0 0 var(--space-xs);color:var(--fg-muted)">coverage · licensing · photo passes</p>
+          <h3 id="contact-h">get in touch before the doors open.</h3>
+        </div>
+        <div class="mailrow">
+          <span class="mail" id="mail">spencerdotgray@gmail.com</span>
+          <button class="btn" type="button" id="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copy email</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div><p class="wmi">seshpdx</p><p>portland, from the pit.</p></div>
+      <div class="mono credit"><p>PHOTO: SPENCER GRAY / SESHPDX</p><p>© 2026 · ALL FRAMES © SPENCER GRAY</p></div>
+    </footer>
+  </div>
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Frame viewer" hidden>
+  <div class="lb-top">
+    <span class="lb-count" id="lbcount"></span>
+    <button class="ib" type="button" id="lbclose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="lb-stage" id="lbstage">
+    <img id="lbimg" alt="">
+    <button class="ib lb-prev" type="button" id="lbprev" aria-label="Previous frame"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button class="ib lb-next" type="button" id="lbnext" aria-label="Next frame"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+  <div class="strip mono" id="lbstrip"></div>
+  <p class="lb-note" id="lbnote"><span id="lbtext"></span><button type="button" id="lbshow">Show notes</button></p>
+</div>
+<div class="toast" id="toast" role="status" hidden><i></i><span id="toastmsg">Email copied.</span></div>
+
+<script>
+(function(){
+  // FR = frames in shooting order: n file number, s show id, dsc camera frame no., act = set named only when the folders separate the acts or the name is in frame.
+  var FR = [{"n": "001", "s": "S01", "w": 1600, "h": 1067, "t": "", "dsc": null, "act": "Mt. Joy", "sel": true}, {"n": "002", "s": "S01", "w": 1600, "h": 1067, "t": "2018-04-06T21:21", "dsc": null, "act": null, "sel": false}, {"n": "003", "s": "S01", "w": 1600, "h": 1067, "t": "2018-04-06T21:39", "dsc": "0515", "act": null, "sel": false}, {"n": "005", "s": "S01", "w": 1600, "h": 1067, "t": "2018-04-06T22:12", "dsc": "0527", "act": null, "sel": false}, {"n": "006", "s": "S01", "w": 1600, "h": 1067, "t": "2018-04-06T22:13", "dsc": "0638", "act": null, "sel": false}, {"n": "008", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T19:26", "dsc": "4795", "act": null, "sel": false}, {"n": "009", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T22:22", "dsc": null, "act": "Mt. Joy", "sel": false}, {"n": "010", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T22:23", "dsc": null, "act": "Mt. Joy", "sel": false}, {"n": "011", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T22:23", "dsc": null, "act": "Mt. Joy", "sel": true}, {"n": "012", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T22:24", "dsc": null, "act": "Mt. Joy", "sel": false}, {"n": "013", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T22:24", "dsc": null, "act": "Mt. Joy", "sel": false}, {"n": "014", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T22:25", "dsc": null, "act": "Mt. Joy", "sel": false}, {"n": "015", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T22:25", "dsc": null, "act": "Mt. Joy", "sel": false}, {"n": "016", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T22:26", "dsc": null, "act": "Mt. Joy", "sel": false}, {"n": "017", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T22:28", "dsc": null, "act": "Mt. Joy", "sel": false}, {"n": "018", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T23:10", "dsc": "6021", "act": null, "sel": false}, {"n": "019", "s": "S01B", "w": 1600, "h": 1067, "t": "2018-12-03T23:10", "dsc": "6028", "act": null, "sel": false}, {"n": "020", "s": "S02", "w": 1600, "h": 1000, "t": "", "dsc": null, "act": null, "sel": true}, {"n": "021", "s": "S02", "w": 1280, "h": 1600, "t": "2019-01-26T21:37", "dsc": null, "act": "Young & Sick", "sel": false}, {"n": "022", "s": "S02", "w": 1600, "h": 1067, "t": "2019-01-26T21:38", "dsc": "8056", "act": null, "sel": false}, {"n": "023", "s": "S02", "w": 1600, "h": 1067, "t": "2019-01-26T22:20", "dsc": "8308", "act": null, "sel": false}, {"n": "024", "s": "S02", "w": 1600, "h": 1067, "t": "2019-01-26T22:21", "dsc": "8325", "act": null, "sel": false}, {"n": "025", "s": "S02", "w": 1600, "h": 1067, "t": "2019-01-26T22:24", "dsc": "8487", "act": null, "sel": false}, {"n": "026", "s": "S02", "w": 1600, "h": 1067, "t": "2019-01-26T22:25", "dsc": "8585", "act": null, "sel": false}, {"n": "027", "s": "S02", "w": 1600, "h": 1067, "t": "2019-01-26T22:30", "dsc": "8865", "act": null, "sel": false}, {"n": "028", "s": "S02", "w": 1600, "h": 1067, "t": "2019-01-26T22:26", "dsc": "8600", "act": null, "sel": false}, {"n": "029", "s": "S02", "w": 1600, "h": 1067, "t": "2019-01-26T22:20", "dsc": "8255", "act": null, "sel": false}, {"n": "032", "s": "S04", "w": 1600, "h": 1067, "t": "", "dsc": "1827", "act": null, "sel": false}, {"n": "033", "s": "S04", "w": 1600, "h": 1067, "t": "", "dsc": "1830", "act": null, "sel": false}, {"n": "034", "s": "S04", "w": 1600, "h": 1067, "t": "", "dsc": "2054", "act": null, "sel": false}, {"n": "035", "s": "S04", "w": 1600, "h": 1067, "t": "", "dsc": "2134", "act": null, "sel": false}, {"n": "036", "s": "S04", "w": 1600, "h": 1280, "t": "", "dsc": "2143", "act": null, "sel": false}, {"n": "037", "s": "S04", "w": 1600, "h": 1067, "t": "", "dsc": "2223", "act": null, "sel": false}, {"n": "038", "s": "S05", "w": 1280, "h": 1600, "t": "2019-03-05T21:12", "dsc": "2337", "act": null, "sel": false}, {"n": "039", "s": "S05", "w": 1600, "h": 1067, "t": "2019-03-05T21:10", "dsc": "2316", "act": null, "sel": false}, {"n": "040", "s": "S05", "w": 1600, "h": 1067, "t": "2019-03-05T21:12", "dsc": "2333", "act": null, "sel": false}, {"n": "041", "s": "S05", "w": 1600, "h": 1067, "t": "2019-03-05T22:08", "dsc": "2494", "act": null, "sel": false}, {"n": "042", "s": "S05", "w": 1600, "h": 1067, "t": "2019-03-05T22:12", "dsc": "2519", "act": "Max Frost", "sel": false}, {"n": "043", "s": "S05", "w": 1600, "h": 1067, "t": "2019-03-05T22:22", "dsc": "2612", "act": "Max Frost", "sel": false}, {"n": "044", "s": "S05", "w": 1600, "h": 1067, "t": "2019-03-05T23:16", "dsc": "3114", "act": "Max Frost", "sel": false}, {"n": "045", "s": "S05", "w": 1600, "h": 1067, "t": "2019-03-05T23:17", "dsc": "3126", "act": "Max Frost", "sel": false}, {"n": "048", "s": "S08", "w": 1600, "h": 1067, "t": "", "dsc": "4399", "act": null, "sel": false}, {"n": "049", "s": "S08", "w": 900, "h": 1600, "t": "2019-03-23T20:38", "dsc": "3484", "act": null, "sel": false}, {"n": "050", "s": "S08", "w": 1280, "h": 1600, "t": "2019-03-23T21:38", "dsc": null, "act": "Mt. Joy", "sel": false}, {"n": "051", "s": "S08", "w": 1280, "h": 1600, "t": "2019-03-23T22:02", "dsc": "4259", "act": null, "sel": false}, {"n": "052", "s": "S08", "w": 1280, "h": 1600, "t": "2019-03-23T22:07", "dsc": "4348", "act": null, "sel": false}, {"n": "053", "s": "S08", "w": 1600, "h": 1067, "t": "2019-03-23T20:31", "dsc": "3462", "act": null, "sel": false}, {"n": "054", "s": "S08", "w": 1600, "h": 1067, "t": "2019-03-23T21:25", "dsc": "3629", "act": null, "sel": false}, {"n": "055", "s": "S08", "w": 1600, "h": 1067, "t": "2019-03-23T21:26", "dsc": "3650", "act": null, "sel": false}, {"n": "056", "s": "S08", "w": 1600, "h": 1067, "t": "2019-03-23T21:28", "dsc": "3688", "act": null, "sel": false}, {"n": "057", "s": "S08", "w": 1600, "h": 1067, "t": "2019-03-23T21:41", "dsc": "3872", "act": null, "sel": false}, {"n": "058", "s": "S09", "w": 1600, "h": 1067, "t": "2019-04-02T19:53", "dsc": "4513", "act": null, "sel": false}, {"n": "059", "s": "S09", "w": 1600, "h": 1600, "t": "2019-04-02T19:54", "dsc": "4518", "act": null, "sel": false}, {"n": "060", "s": "S09", "w": 1067, "h": 1600, "t": "2019-04-02T20:02", "dsc": "4558", "act": null, "sel": false}, {"n": "061", "s": "S09", "w": 1280, "h": 1600, "t": "2019-04-02T21:19", "dsc": "4903", "act": "Lil Tracy", "sel": true}, {"n": "062", "s": "S09", "w": 1600, "h": 1280, "t": "2019-04-02T21:19", "dsc": "4911", "act": "Lil Tracy", "sel": false}, {"n": "063", "s": "S09", "w": 1600, "h": 1200, "t": "2019-04-02T21:21", "dsc": "4926", "act": "Lil Tracy", "sel": false}, {"n": "064", "s": "S09", "w": 1600, "h": 1280, "t": "2019-04-02T21:28", "dsc": "4939", "act": "Lil Tracy", "sel": false}, {"n": "065", "s": "S09", "w": 1600, "h": 1067, "t": "2019-04-02T21:29", "dsc": "4945", "act": "Lil Tracy", "sel": false}, {"n": "066", "s": "S09", "w": 1600, "h": 1067, "t": "2019-04-02T21:32", "dsc": "5004", "act": "Lil Tracy", "sel": false}, {"n": "067", "s": "S10", "w": 1600, "h": 1280, "t": "2019-04-03T20:09", "dsc": "5425", "act": null, "sel": false}, {"n": "068", "s": "S10", "w": 1600, "h": 1067, "t": "2019-04-03T20:10", "dsc": "5437", "act": null, "sel": false}, {"n": "069", "s": "S10", "w": 1600, "h": 1280, "t": "2019-04-03T20:15", "dsc": "5487", "act": null, "sel": false}, {"n": "070", "s": "S10", "w": 1600, "h": 1067, "t": "2019-04-03T20:16", "dsc": "5499", "act": null, "sel": false}, {"n": "071", "s": "S10", "w": 1600, "h": 1280, "t": "2019-04-03T20:16", "dsc": "5502", "act": null, "sel": false}, {"n": "072", "s": "S10", "w": 1600, "h": 900, "t": "2019-04-03T20:18", "dsc": "5532", "act": null, "sel": false}, {"n": "073", "s": "S10", "w": 1600, "h": 900, "t": "2019-04-03T20:19", "dsc": "5548", "act": null, "sel": false}, {"n": "074", "s": "S10", "w": 1600, "h": 1067, "t": "2019-04-03T20:21", "dsc": "5572", "act": null, "sel": false}, {"n": "075", "s": "S10", "w": 1600, "h": 1600, "t": "2019-04-03T20:31", "dsc": "5659", "act": null, "sel": false}, {"n": "076", "s": "S10", "w": 1280, "h": 1600, "t": "2019-04-03T20:34", "dsc": "5682", "act": null, "sel": false}, {"n": "077", "s": "S11", "w": 1600, "h": 1280, "t": "", "dsc": null, "act": "SYML", "sel": true}, {"n": "078", "s": "S11", "w": 1600, "h": 1294, "t": "2019-04-15T20:09", "dsc": "6170", "act": null, "sel": false}, {"n": "079", "s": "S11", "w": 1280, "h": 1600, "t": "2019-04-15T20:13", "dsc": "6200", "act": null, "sel": false}, {"n": "080", "s": "S11", "w": 1600, "h": 1067, "t": "2019-04-15T21:07", "dsc": "6438", "act": null, "sel": false}, {"n": "081", "s": "S11", "w": 1600, "h": 1280, "t": "2019-04-15T21:11", "dsc": "6561", "act": null, "sel": false}, {"n": "082", "s": "S11", "w": 1600, "h": 1067, "t": "2019-04-15T21:12", "dsc": "6609", "act": null, "sel": false}, {"n": "083", "s": "S11", "w": 1600, "h": 1600, "t": "2019-04-15T21:12", "dsc": "6622", "act": null, "sel": false}, {"n": "084", "s": "S11", "w": 1067, "h": 1600, "t": "2019-04-15T21:13", "dsc": "6689", "act": null, "sel": false}, {"n": "085", "s": "S11", "w": 1600, "h": 1280, "t": "2019-04-15T21:15", "dsc": "6738", "act": null, "sel": false}, {"n": "086", "s": "S11", "w": 1600, "h": 1067, "t": "2019-04-15T21:29", "dsc": "6898", "act": null, "sel": false}, {"n": "087", "s": "S11", "w": 1600, "h": 1067, "t": "2019-04-15T21:36", "dsc": "6985", "act": null, "sel": false}, {"n": "088", "s": "S12", "w": 1600, "h": 1177, "t": "2019-04-24T21:37", "dsc": "7307", "act": "¿Téo?", "sel": false}, {"n": "089", "s": "S12", "w": 1600, "h": 1324, "t": "2019-04-24T21:37", "dsc": "7311", "act": "¿Téo?", "sel": false}, {"n": "090", "s": "S12", "w": 1600, "h": 1326, "t": "2019-04-24T21:38", "dsc": "7323", "act": "¿Téo?", "sel": false}, {"n": "091", "s": "S12", "w": 1600, "h": 1280, "t": "2019-04-24T21:39", "dsc": "7342", "act": "¿Téo?", "sel": false}, {"n": "092", "s": "S12", "w": 1600, "h": 1067, "t": "2019-04-24T21:51", "dsc": "7446", "act": "¿Téo?", "sel": false}, {"n": "093", "s": "S12", "w": 1067, "h": 1600, "t": "2019-04-24T21:51", "dsc": "7447", "act": "¿Téo?", "sel": false}, {"n": "094", "s": "S12", "w": 1067, "h": 1600, "t": "2019-04-24T22:00", "dsc": "7500", "act": "¿Téo?", "sel": false}, {"n": "095", "s": "S12", "w": 1280, "h": 1600, "t": "2019-04-24T22:00", "dsc": "7502", "act": "¿Téo?", "sel": false}, {"n": "096", "s": "S13", "w": 1600, "h": 1067, "t": "2019-04-26T22:58", "dsc": "7929", "act": null, "sel": false}, {"n": "098", "s": "S14", "w": 1600, "h": 1067, "t": "", "dsc": "8350", "act": "The PALMS", "sel": false}, {"n": "099", "s": "S14", "w": 1280, "h": 1600, "t": "2019-04-28T21:25", "dsc": null, "act": "The PALMS", "sel": false}, {"n": "100", "s": "S14", "w": 1600, "h": 1280, "t": "2019-04-28T21:30", "dsc": "8174", "act": "The PALMS", "sel": true}, {"n": "101", "s": "S14", "w": 1280, "h": 1600, "t": "2019-04-28T21:51", "dsc": null, "act": "The PALMS", "sel": false}, {"n": "102", "s": "S14", "w": 1600, "h": 1067, "t": "2019-04-28T21:31", "dsc": "8236", "act": "The PALMS", "sel": false}, {"n": "103", "s": "S14", "w": 1600, "h": 1067, "t": "2019-04-28T21:51", "dsc": "8484", "act": "The PALMS", "sel": false}, {"n": "106", "s": "S16", "w": 1600, "h": 1067, "t": "", "dsc": "9859", "act": null, "sel": false}, {"n": "110", "s": "S17", "w": 1600, "h": 1067, "t": "", "dsc": "0306", "act": "Japanese Breakfast", "sel": true}, {"n": "112", "s": "S17", "w": 1600, "h": 1067, "t": "2019-08-23T21:31", "dsc": "0146", "act": "And And And", "sel": false}, {"n": "113", "s": "S17", "w": 1600, "h": 1067, "t": "2019-08-23T21:32", "dsc": "0155", "act": "And And And", "sel": false}, {"n": "114", "s": "S17", "w": 1600, "h": 1067, "t": "2019-08-23T21:36", "dsc": "0164", "act": "And And And", "sel": false}, {"n": "115", "s": "S17", "w": 1600, "h": 1067, "t": "2019-08-23T21:37", "dsc": "0173", "act": "And And And", "sel": false}, {"n": "116", "s": "S18", "w": 1280, "h": 1600, "t": "", "dsc": null, "act": "K.Flay", "sel": false}, {"n": "117", "s": "S18", "w": 1600, "h": 1143, "t": "", "dsc": null, "act": "K.Flay", "sel": false}, {"n": "118", "s": "S18", "w": 1600, "h": 1600, "t": "", "dsc": null, "act": "K.Flay", "sel": true}, {"n": "119", "s": "S18", "w": 1280, "h": 1600, "t": "2019-09-13T22:00", "dsc": "0740", "act": "K.Flay", "sel": false}, {"n": "120", "s": "S18", "w": 1280, "h": 1600, "t": "2019-09-13T22:01", "dsc": "0758", "act": "K.Flay", "sel": false}, {"n": "121", "s": "S18", "w": 1067, "h": 1600, "t": "2019-09-13T22:01", "dsc": null, "act": "K.Flay", "sel": false}, {"n": "122", "s": "S18", "w": 1066, "h": 1600, "t": "2019-09-13T22:01", "dsc": "0766", "act": "K.Flay", "sel": false}, {"n": "123", "s": "S18", "w": 1600, "h": 1280, "t": "2019-09-13T22:03", "dsc": "0790", "act": "K.Flay", "sel": false}, {"n": "124", "s": "S18", "w": 1067, "h": 1600, "t": "2019-09-13T21:59", "dsc": "0724", "act": "K.Flay", "sel": false}, {"n": "125", "s": "S19", "w": 1600, "h": 1280, "t": "2019-09-15T22:06", "dsc": null, "act": "Oliver Tree", "sel": true}, {"n": "127", "s": "S19", "w": 1600, "h": 1067, "t": "2019-09-15T22:06", "dsc": null, "act": "Oliver Tree", "sel": false}, {"n": "128", "s": "S19", "w": 1600, "h": 1067, "t": "2019-09-15T21:59", "dsc": "1540", "act": "Oliver Tree", "sel": false}, {"n": "132", "s": "S19", "w": 1600, "h": 1067, "t": "2019-09-15T22:25", "dsc": "1858", "act": null, "sel": false}, {"n": "133", "s": "S20", "w": 1600, "h": 1067, "t": "2019-09-30T21:10", "dsc": "2540", "act": null, "sel": false}, {"n": "134", "s": "S20", "w": 1600, "h": 1067, "t": "2019-09-30T21:23", "dsc": "2720", "act": null, "sel": false}, {"n": "135", "s": "S20", "w": 1600, "h": 1067, "t": "2019-09-30T21:38", "dsc": "2803", "act": null, "sel": false}, {"n": "136", "s": "S20", "w": 1600, "h": 1067, "t": "2019-09-30T21:51", "dsc": "2918", "act": null, "sel": false}, {"n": "137", "s": "S20", "w": 1600, "h": 1067, "t": "2019-09-30T21:55", "dsc": "2956", "act": null, "sel": false}, {"n": "138", "s": "S20", "w": 1600, "h": 1067, "t": "2019-09-30T21:55", "dsc": "2955", "act": null, "sel": false}, {"n": "139", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T20:12", "dsc": null, "act": "Brooke Candy", "sel": false}, {"n": "140", "s": "S21", "w": 1280, "h": 1600, "t": "", "dsc": null, "act": "Brooke Candy", "sel": false}, {"n": "142", "s": "S21", "w": 1600, "h": 1067, "t": "", "dsc": "3403", "act": "Charli XCX", "sel": false}, {"n": "143", "s": "S21", "w": 1600, "h": 1143, "t": "2019-10-06T21:09", "dsc": "3393", "act": "Charli XCX", "sel": true}, {"n": "144", "s": "S21", "w": 1600, "h": 1143, "t": "2019-10-06T21:15", "dsc": "3558", "act": "Charli XCX", "sel": true}, {"n": "145", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T21:16", "dsc": "3557", "act": "Charli XCX", "sel": false}, {"n": "146", "s": "S22", "w": 1600, "h": 1067, "t": "2019-10-30T21:48", "dsc": "5227", "act": null, "sel": false}, {"n": "147", "s": "S22", "w": 1600, "h": 1067, "t": "", "dsc": "5306", "act": "Electric Guest", "sel": true}, {"n": "148", "s": "S22", "w": 1280, "h": 1600, "t": "2019-10-30T20:36", "dsc": "5124", "act": "WAFIA", "sel": false}, {"n": "149", "s": "S22", "w": 1600, "h": 1143, "t": "2019-10-30T20:39", "dsc": "5145", "act": "WAFIA", "sel": false}, {"n": "150", "s": "S22", "w": 1600, "h": 1067, "t": "2019-10-30T20:33", "dsc": "5093", "act": "WAFIA", "sel": false}, {"n": "151", "s": "S22", "w": 1600, "h": 1067, "t": "2019-10-30T20:38", "dsc": "5141", "act": "WAFIA", "sel": false}, {"n": "152", "s": "S22", "w": 1280, "h": 1600, "t": "2019-10-30T21:50", "dsc": "5245", "act": "Electric Guest", "sel": false}, {"n": "153", "s": "S22", "w": 1143, "h": 1600, "t": "2019-10-30T22:37", "dsc": "5667", "act": "Electric Guest", "sel": false}, {"n": "154", "s": "S22", "w": 1600, "h": 1067, "t": "2019-10-30T21:47", "dsc": "5215", "act": "Electric Guest", "sel": false}, {"n": "155", "s": "S22", "w": 1600, "h": 1067, "t": "2019-10-30T21:53", "dsc": "5312", "act": "Electric Guest", "sel": false}, {"n": "156", "s": "S22", "w": 1600, "h": 1067, "t": "2019-10-30T22:36", "dsc": "5640", "act": "Electric Guest", "sel": false}, {"n": "157", "s": "S23", "w": 1600, "h": 1067, "t": "", "dsc": "6205", "act": null, "sel": false}, {"n": "158", "s": "S23", "w": 1600, "h": 1067, "t": "", "dsc": "6382", "act": null, "sel": true}, {"n": "159", "s": "S23", "w": 1600, "h": 1067, "t": "", "dsc": "6479", "act": null, "sel": false}, {"n": "160", "s": "S23", "w": 1600, "h": 1067, "t": "2019-11-07T00:06", "dsc": "6547", "act": "Mt. Joy", "sel": false}, {"n": "161", "s": "S23", "w": 1600, "h": 1067, "t": "2019-11-07T00:07", "dsc": "6553", "act": "Mt. Joy", "sel": false}, {"n": "162", "s": "S23", "w": 1067, "h": 1600, "t": "2019-11-07T00:04", "dsc": "6539", "act": "Mt. Joy", "sel": false}, {"n": "163", "s": "S23", "w": 1600, "h": 1067, "t": "2019-11-07T00:25", "dsc": "6582", "act": "Mt. Joy", "sel": false}, {"n": "164", "s": "S24", "w": 1600, "h": 1280, "t": "2019-12-16T22:28", "dsc": null, "act": "Local Natives", "sel": false}, {"n": "165", "s": "S24", "w": 1600, "h": 1067, "t": "2019-12-16T21:00", "dsc": "7858", "act": "Pretty Gritty", "sel": false}, {"n": "166", "s": "S24", "w": 1600, "h": 1067, "t": "2019-12-16T21:06", "dsc": "7922", "act": "Pretty Gritty", "sel": false}, {"n": "167", "s": "S24", "w": 1600, "h": 1067, "t": "2019-12-16T21:09", "dsc": "7960", "act": "Pretty Gritty", "sel": false}, {"n": "168", "s": "S24", "w": 1600, "h": 1067, "t": "2019-12-16T22:27", "dsc": "8112", "act": "Local Natives", "sel": false}, {"n": "169", "s": "S24", "w": 1600, "h": 1067, "t": "2019-12-16T22:28", "dsc": "8129", "act": "Local Natives", "sel": false}, {"n": "170", "s": "S24", "w": 1600, "h": 1067, "t": "2019-12-16T22:28", "dsc": "8135", "act": "Local Natives", "sel": false}, {"n": "171", "s": "S24", "w": 1600, "h": 1067, "t": "2019-12-16T22:32", "dsc": "8187", "act": "Local Natives", "sel": false}, {"n": "172", "s": "S24", "w": 1067, "h": 1600, "t": "2019-12-16T22:34", "dsc": "8221", "act": "Local Natives", "sel": false}, {"n": "175", "s": "S26", "w": 1600, "h": 1280, "t": "", "dsc": "8413", "act": "Nolie", "sel": false}, {"n": "176", "s": "S26", "w": 1600, "h": 1067, "t": "2020-01-24T21:39", "dsc": "8394", "act": "Nolie", "sel": false}, {"n": "177", "s": "S26", "w": 1600, "h": 1067, "t": "2020-01-24T22:43", "dsc": "8514", "act": null, "sel": false}, {"n": "178", "s": "S26", "w": 1600, "h": 1067, "t": "2020-01-24T23:34", "dsc": "8561", "act": null, "sel": false}, {"n": "179", "s": "S26", "w": 1600, "h": 1067, "t": "2020-01-24T23:34", "dsc": "8592", "act": null, "sel": false}, {"n": "180", "s": "S26", "w": 1600, "h": 1067, "t": "2020-01-24T23:41", "dsc": "8820", "act": null, "sel": false}, {"n": "181", "s": "S26", "w": 1600, "h": 1067, "t": "2020-01-24T23:43", "dsc": "8870", "act": null, "sel": false}, {"n": "182", "s": "S26", "w": 1600, "h": 1067, "t": "2020-01-24T23:47", "dsc": "9088", "act": null, "sel": false}, {"n": "183", "s": "S26", "w": 1600, "h": 1067, "t": "2020-01-24T23:47", "dsc": "9101", "act": null, "sel": false}, {"n": "184", "s": "S27", "w": 1600, "h": 1067, "t": "", "dsc": "0126", "act": "Dijon", "sel": false}, {"n": "185", "s": "S27", "w": 1600, "h": 1067, "t": "", "dsc": "0252", "act": "Dijon", "sel": false}, {"n": "186", "s": "S27", "w": 1600, "h": 1067, "t": "", "dsc": "0258", "act": "Dijon", "sel": false}, {"n": "187", "s": "S27", "w": 1600, "h": 1067, "t": "", "dsc": "0259", "act": "Dijon", "sel": false}, {"n": "188", "s": "S27", "w": 1280, "h": 1600, "t": "", "dsc": null, "act": "Dijon", "sel": true}, {"n": "189", "s": "S27", "w": 1600, "h": 1280, "t": "", "dsc": null, "act": "Dijon", "sel": false}, {"n": "190", "s": "S27", "w": 1600, "h": 1067, "t": "", "dsc": "0295", "act": "Dijon", "sel": true}, {"n": "192", "s": "S27", "w": 1600, "h": 1280, "t": "2020-02-13T22:27", "dsc": null, "act": "Dijon", "sel": false}, {"n": "193", "s": "S27", "w": 1600, "h": 1067, "t": "2020-02-13T22:16", "dsc": "0179", "act": "Dijon", "sel": false}, {"n": "194", "s": "S27", "w": 1600, "h": 1067, "t": "", "dsc": "0103", "act": null, "sel": false}, {"n": "195", "s": "S27", "w": 1600, "h": 1067, "t": "2020-02-13T22:33", "dsc": "0326", "act": "Dijon", "sel": false}, {"n": "196", "s": "S27", "w": 1600, "h": 1067, "t": "2020-02-13T21:12", "dsc": "9983", "act": null, "sel": false}, {"n": "197", "s": "S28", "w": 1600, "h": 1067, "t": "2020-03-04T22:06", "dsc": "0576", "act": null, "sel": false}, {"n": "198", "s": "S28", "w": 1600, "h": 1067, "t": "2020-03-04T22:29", "dsc": "0712", "act": null, "sel": false}, {"n": "199", "s": "S28", "w": 1600, "h": 1067, "t": "2020-03-04T21:05", "dsc": "0490", "act": null, "sel": false}, {"n": "200", "s": "S28", "w": 1600, "h": 1067, "t": "2020-03-04T21:05", "dsc": "0500", "act": null, "sel": false}, {"n": "201", "s": "S28", "w": 1600, "h": 1067, "t": "2020-03-04T22:05", "dsc": "0570", "act": null, "sel": false}, {"n": "202", "s": "S28", "w": 1600, "h": 1067, "t": "2020-03-04T22:39", "dsc": "0778", "act": null, "sel": false}, {"n": "203", "s": "S29", "w": 1280, "h": 1600, "t": "", "dsc": "0875", "act": "Ric Wilson", "sel": false}, {"n": "204", "s": "S29", "w": 1600, "h": 1067, "t": "", "dsc": "0962", "act": "Ric Wilson", "sel": false}, {"n": "205", "s": "S29", "w": 1600, "h": 1233, "t": "2020-03-06T22:10", "dsc": null, "act": "Ric Wilson", "sel": true}, {"n": "206", "s": "S29", "w": 1600, "h": 1067, "t": "2020-03-06T22:14", "dsc": "0945", "act": "Ric Wilson", "sel": false}, {"n": "207", "s": "S29", "w": 1280, "h": 1600, "t": "", "dsc": null, "act": "Drama", "sel": false}, {"n": "208", "s": "S29", "w": 1600, "h": 1067, "t": "2020-03-06T23:09", "dsc": "1010", "act": "Drama", "sel": false}, {"n": "209", "s": "S29", "w": 1600, "h": 1600, "t": "2020-03-06T23:11", "dsc": "1037", "act": "Drama", "sel": true}, {"n": "210", "s": "S29", "w": 1600, "h": 1067, "t": "2020-03-06T23:11", "dsc": "1045", "act": "Drama", "sel": false}, {"n": "211", "s": "S29", "w": 1600, "h": 1067, "t": "2020-03-06T23:12", "dsc": "1065", "act": "Drama", "sel": false}, {"n": "212", "s": "S29", "w": 1600, "h": 1067, "t": "2020-03-06T23:13", "dsc": "1073", "act": "Drama", "sel": false}, {"n": "213", "s": "S29", "w": 1600, "h": 1067, "t": "2020-03-06T23:14", "dsc": "1083", "act": "Drama", "sel": false}, {"n": "214", "s": "S29", "w": 1600, "h": 1067, "t": "2020-03-06T23:14", "dsc": "1088", "act": "Drama", "sel": false}, {"n": "215", "s": "S29", "w": 1600, "h": 1067, "t": "2020-03-06T23:15", "dsc": "1096", "act": "Drama", "sel": false}, {"n": "216", "s": "S29", "w": 1600, "h": 1067, "t": "2020-03-06T23:25", "dsc": "1137", "act": "Drama", "sel": false}, {"n": "217", "s": "S31", "w": 1067, "h": 1600, "t": "2021-07-24T20:03", "dsc": "2727", "act": null, "sel": false}, {"n": "218", "s": "S31", "w": 1067, "h": 1600, "t": "2021-07-24T20:37", "dsc": "3023", "act": null, "sel": false}, {"n": "219", "s": "S31", "w": 1280, "h": 1600, "t": "2021-07-24T20:38", "dsc": "3036", "act": null, "sel": false}, {"n": "220", "s": "S32", "w": 1600, "h": 1067, "t": "2023-04-28T20:32", "dsc": "8182", "act": null, "sel": false}, {"n": "221", "s": "S32", "w": 1600, "h": 1236, "t": "2023-04-28T20:32", "dsc": "8196", "act": null, "sel": true}, {"n": "222", "s": "S32", "w": 1200, "h": 1600, "t": "2023-04-28T20:37", "dsc": "8262", "act": null, "sel": false}, {"n": "223", "s": "S32", "w": 1600, "h": 1143, "t": "2023-04-28T20:40", "dsc": "8307", "act": null, "sel": false}, {"n": "224", "s": "S32", "w": 1600, "h": 1067, "t": "2023-04-28T20:41", "dsc": "8327", "act": null, "sel": false}, {"n": "225", "s": "S32", "w": 1600, "h": 1280, "t": "2023-04-28T20:44", "dsc": "8352", "act": null, "sel": false}, {"n": "226", "s": "S32", "w": 1600, "h": 1067, "t": "2023-04-28T21:02", "dsc": "8566", "act": null, "sel": false}, {"n": "227", "s": "S32", "w": 1280, "h": 1600, "t": "2023-04-28T21:09", "dsc": "8583", "act": null, "sel": false}, {"n": "228", "s": "S32", "w": 1600, "h": 1067, "t": "2023-04-28T21:22", "dsc": "8805", "act": null, "sel": false}, {"n": "229", "s": "S32", "w": 1600, "h": 1067, "t": "2023-04-28T21:57", "dsc": "9031", "act": null, "sel": false}, {"n": "230", "s": "S32", "w": 1600, "h": 1067, "t": "2023-04-28T22:00", "dsc": "9063", "act": null, "sel": false}, {"n": "231", "s": "S32", "w": 1600, "h": 1067, "t": "2023-04-28T22:10", "dsc": "9211", "act": null, "sel": false}, {"n": "232", "s": "S33", "w": 1200, "h": 1600, "t": "2024-06-13T21:12", "dsc": "6233", "act": null, "sel": false}, {"n": "233", "s": "S33", "w": 1200, "h": 1600, "t": "2024-06-13T21:22", "dsc": "6283", "act": null, "sel": false}, {"n": "234", "s": "S33", "w": 1200, "h": 1600, "t": "2024-06-13T21:26", "dsc": "6332", "act": null, "sel": false}, {"n": "235", "s": "S33", "w": 1200, "h": 1600, "t": "2024-06-13T21:35", "dsc": "6399", "act": null, "sel": false}, {"n": "236", "s": "S33", "w": 1200, "h": 1600, "t": "2024-06-13T21:36", "dsc": "6414", "act": null, "sel": false}, {"n": "237", "s": "S33", "w": 1200, "h": 1600, "t": "2024-06-13T21:50", "dsc": "6533", "act": null, "sel": false}, {"n": "238", "s": "S33", "w": 1200, "h": 1600, "t": "2024-06-13T21:52", "dsc": "6540", "act": null, "sel": false}, {"n": "239", "s": "S33", "w": 1200, "h": 1600, "t": "2024-06-13T21:36", "dsc": "6417", "act": null, "sel": false}, {"n": "240", "s": "S34", "w": 1067, "h": 1600, "t": "2024-11-20T21:22", "dsc": "3020", "act": null, "sel": false}, {"n": "241", "s": "S34", "w": 1600, "h": 1067, "t": "2024-11-20T20:25", "dsc": "1590", "act": null, "sel": false}, {"n": "242", "s": "S34", "w": 1600, "h": 1067, "t": "2024-11-20T20:28", "dsc": "1619", "act": null, "sel": false}, {"n": "243", "s": "S34", "w": 1600, "h": 1067, "t": "2024-11-20T20:40", "dsc": "1915", "act": null, "sel": false}, {"n": "244", "s": "S34", "w": 1600, "h": 1067, "t": "2024-11-20T20:46", "dsc": "2093", "act": null, "sel": false}, {"n": "245", "s": "S34", "w": 1600, "h": 1067, "t": "2024-11-20T21:06", "dsc": "2537", "act": null, "sel": false}, {"n": "246", "s": "S34", "w": 1600, "h": 1067, "t": "2024-11-20T21:07", "dsc": "2597", "act": null, "sel": false}, {"n": "247", "s": "S34", "w": 1600, "h": 1067, "t": "2024-11-20T21:19", "dsc": "2893", "act": null, "sel": false}, {"n": "248", "s": "S34", "w": 1600, "h": 1067, "t": "2024-11-20T21:21", "dsc": "2952", "act": null, "sel": false}, {"n": "249", "s": "S20B", "w": 1280, "h": 1600, "t": "", "dsc": null, "act": "Yoke Lore", "sel": true}, {"n": "250", "s": "S20B", "w": 1600, "h": 1067, "t": "", "dsc": null, "act": "Yoke Lore", "sel": false}, {"n": "251", "s": "S20B", "w": 1280, "h": 1600, "t": "2019-10-11T22:17", "dsc": "3949", "act": null, "sel": false}, {"n": "252", "s": "S20B", "w": 1600, "h": 1067, "t": "2019-10-11T22:16", "dsc": "3842", "act": null, "sel": false}, {"n": "253", "s": "S20B", "w": 1600, "h": 1067, "t": "2019-10-11T22:17", "dsc": "3948", "act": null, "sel": false}, {"n": "254", "s": "S20B", "w": 1600, "h": 1067, "t": "2019-10-11T22:18", "dsc": "3961", "act": null, "sel": false}, {"n": "255", "s": "S20B", "w": 1600, "h": 1067, "t": "2019-10-11T22:18", "dsc": "3965", "act": null, "sel": false}, {"n": "256", "s": "S20B", "w": 1600, "h": 1067, "t": "2019-10-11T22:20", "dsc": "4018", "act": null, "sel": false}, {"n": "257", "s": "S20B", "w": 1067, "h": 1600, "t": "2019-10-11T22:22", "dsc": "4074", "act": null, "sel": false}, {"n": "258", "s": "S20B", "w": 1600, "h": 1067, "t": "2019-10-11T22:22", "dsc": "4091", "act": null, "sel": false}, {"n": "259", "s": "S20B", "w": 1600, "h": 1067, "t": "2019-10-11T22:42", "dsc": "4224", "act": null, "sel": false}, {"n": "260", "s": "S24A", "w": 1600, "h": 1280, "t": "2019-12-06T21:23", "dsc": "7562", "act": null, "sel": false}, {"n": "261", "s": "S24A", "w": 1280, "h": 1600, "t": "2019-12-06T22:06", "dsc": "7611", "act": null, "sel": false}, {"n": "262", "s": "S24A", "w": 1280, "h": 1600, "t": "2019-12-06T22:06", "dsc": "7613", "act": null, "sel": true}, {"n": "263", "s": "S24A", "w": 1600, "h": 1600, "t": "2019-12-06T22:08", "dsc": "7631", "act": null, "sel": false}, {"n": "264", "s": "S24A", "w": 1280, "h": 1600, "t": "2019-12-06T22:11", "dsc": "7661", "act": null, "sel": false}, {"n": "265", "s": "S24A", "w": 1600, "h": 1600, "t": "2019-12-06T22:12", "dsc": "7667", "act": null, "sel": false}, {"n": "266", "s": "S24A", "w": 1280, "h": 1600, "t": "2019-12-06T22:13", "dsc": "7682", "act": null, "sel": false}, {"n": "267", "s": "S24A", "w": 1280, "h": 1600, "t": "2019-12-06T22:13", "dsc": "7684", "act": null, "sel": false}, {"n": "268", "s": "S24A", "w": 1600, "h": 1067, "t": "2019-12-06T22:15", "dsc": "7707", "act": null, "sel": false}, {"n": "269", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T21:11", "dsc": "3414", "act": "Charli XCX", "sel": false}, {"n": "270", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T21:12", "dsc": "3438", "act": "Charli XCX", "sel": false}, {"n": "271", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T21:12", "dsc": "3449", "act": "Charli XCX", "sel": false}, {"n": "272", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T21:12", "dsc": "3457", "act": "Charli XCX", "sel": false}, {"n": "274", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T21:15", "dsc": "3518", "act": "Charli XCX", "sel": false}, {"n": "275", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T21:16", "dsc": "3525", "act": "Charli XCX", "sel": false}, {"n": "277", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T20:10", "dsc": "3290", "act": "Brooke Candy", "sel": false}, {"n": "278", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T20:13", "dsc": "3316", "act": "Brooke Candy", "sel": false}, {"n": "279", "s": "S21", "w": 1600, "h": 1067, "t": "2019-10-06T20:15", "dsc": "3345", "act": "Brooke Candy", "sel": false}, {"n": "v007", "s": "S03", "w": 1600, "h": 1067, "t": "2019-02-21T21:25", "dsc": "0552", "act": "Drew Loza", "sel": false}, {"n": "v008", "s": "S03", "w": 1600, "h": 1067, "t": "2019-02-21T22:04", "dsc": "0791", "act": "Samuel The 1st", "sel": false}, {"n": "v017", "s": "S07", "w": 1600, "h": 1067, "t": "2019-03-18T18:48", "dsc": "3217", "act": null, "sel": false}, {"n": "v018", "s": "S07", "w": 1600, "h": 1067, "t": "2019-03-18T18:53", "dsc": "3271", "act": null, "sel": false}, {"n": "v033", "s": "S13", "w": 1600, "h": 1600, "t": "2019-04-26T22:09", "dsc": "7731", "act": null, "sel": false}, {"n": "v037", "s": "S15", "w": 1600, "h": 1067, "t": "2019-05-22T21:11", "dsc": "8754", "act": null, "sel": false}, {"n": "v038", "s": "S15", "w": 1600, "h": 1067, "t": "2019-05-22T20:28", "dsc": "8679", "act": null, "sel": false}, {"n": "v039", "s": "S16", "w": 1600, "h": 1280, "t": "2019-07-31T22:51", "dsc": "9878", "act": "Golden Vessel", "sel": false}, {"n": "v040", "s": "S16", "w": 1600, "h": 1280, "t": "2019-07-31T22:54", "dsc": "9888", "act": "Golden Vessel", "sel": false}, {"n": "v041", "s": "S16", "w": 1600, "h": 1067, "t": "2019-07-31T21:53", "dsc": "9832", "act": "Instupendo", "sel": false}, {"n": "v042", "s": "S17", "w": 1600, "h": 1067, "t": "2019-08-23T23:31", "dsc": "0252", "act": "Japanese Breakfast", "sel": false}, {"n": "v045", "s": "S19", "w": 1600, "h": 1280, "t": "2019-09-15T21:57", "dsc": "1515", "act": "Oliver Tree", "sel": false}, {"n": "v046", "s": "S19", "w": 1600, "h": 1280, "t": "2019-09-15T22:10", "dsc": "1760", "act": "Oliver Tree", "sel": false}, {"n": "v047", "s": "S19", "w": 1280, "h": 1600, "t": "2019-09-15T22:02", "dsc": "1569", "act": "Oliver Tree", "sel": false}, {"n": "v061", "s": "S25", "w": 1600, "h": 1066, "t": "2020-01-10T23:48", "dsc": "8306", "act": null, "sel": false}, {"n": "v062", "s": "S25", "w": 1600, "h": 1600, "t": "2020-01-10T23:51", "dsc": "8324", "act": null, "sel": false}];
+  // SH = the register. null = not confirmed, shown as blank. conf: confirmed | likely | partial (venue unknown) | folder (from catalog folder only).
+  var SH = [{"id":"S01","date":"2018-04-06","head":"Mt. Joy","bill":["Mt. Joy","Fort Atlantic"],"venue":"Doug Fir Lounge","city":"Portland","conf":"confirmed","tour":"Headlining run, spring 2018","record":"Mt. Joy, their debut album (2 Mar 2018)","then":"Five weeks after the debut album came out.","since":"“Silver Lining” went Platinum. Rearrange Us (2020) opened at No. 1 on Billboard’s New Artist Albums chart, followed by Orange Blood (2022) and Hope We Have Fun (2025). This archive catches the climb: the Doug Fir, the Crystal for KNRK’s December to Remember eight months later, Wonder Ballroom, then a Crystal headline in November 2019.","ev":"Folder “Mt Joy Concert Archive” and the finished edits on FLORIDA_HD. The Doug Fir and Jupiter Hotel signs and a Mt. Joy merch board are in frame. Nikon D3300.","src":[["JamBase: Mt. Joy, Doug Fir, 6 Apr 2018","https://www.jambase.com/show/mt-joy-doug-fir-20180406"],["Wikipedia: Mt. Joy","https://en.wikipedia.org/wiki/Mt._Joy_(band)"]]},{"id":"S01B","date":"2018-12-03","head":"Mt. Joy","bill":["Mt. Joy","Matt & Kim","Elle King","Alice Merton"],"venue":"Crystal Ballroom","city":"Portland","conf":"confirmed","tour":"KNRK’s December to Remember 2018","record":"Mt. Joy, their debut album (Mar 2018)","then":"Eight months after the Doug Fir, now on the radio station’s holiday bill at the Crystal.","since":"“Silver Lining” went Platinum; three more albums followed, starting with Rearrange Us (2020).","ev":"Files named “mtjoycrystal” stamped 3 Dec 2018, and the Crystal’s marquee in frame listing Mt. Joy, Matt & Kim, Elle King and Alice Merton. Not in the Lightroom catalog; found on FLORIDA_HD.","src":[["setlist.fm: Mt. Joy at KNRK’s December to Remember 2018","https://www.setlist.fm/setlist/mt-joy/2018/crystal-ballroom-portland-or-13974d65.html"],["JamBase: Mt. Joy setlists 2018 (Crystal Ballroom, 3 Dec)","https://www.jambase.com/band/mt-joy/setlists/2018"]]},{"id":"S02","date":"2019-01-26","head":"The Knocks","bill":["The Knocks","Blu DeTiger","Young & Sick"],"venue":"Wonder Ballroom","city":"Portland","conf":"confirmed","tour":"North American tour with a full live band","record":"New York Narcotic (2018)","then":"The opener, Blu DeTiger, had released her first single, “In My Head”, three days earlier. The Knocks produced it.","since":"The Knocks: HISTORY (2022), Revelation with Dragonette (2025), and two Grammy nominations. Blu DeTiger: viral bass covers in 2020, a Capitol Records deal (2021), Forbes 30 Under 30 (2023), her debut album All I Ever Want Is Everything (2024), Lollapalooza 2024, and support slots for Sabrina Carpenter and ODESZA.","ev":"Folder “theknocks_concert_selected”, keywords “the knocks” and “wonder ballroom”.","src":[["Vortex: The Knocks, Blu DeTiger and Young & Sick at Wonder Ballroom","https://www.vrtxmag.com/media/photo/the-knocks-blu-detiger-and-young-sick-at-wonder-ballroom-on-jan-26-2019/"],["Wikipedia: The Knocks","https://en.wikipedia.org/wiki/The_Knocks"],["Wikipedia: Blu DeTiger","https://en.wikipedia.org/wiki/Blu_DeTiger"]]},{"id":"S03","date":"2019-02-21","head":"Samuel The 1st","bill":["Samuel The 1st","Drew Loza"],"venue":null,"city":"Portland","conf":"partial","tour":null,"record":null,"then":null,"since":null,"ev":"Separate folders for the Samuel The 1st and Drew Loza sets. The room, with its brick back wall, isn’t identified yet.","src":[]},{"id":"S04","date":"2019-02-28","head":"BAYNK","bill":["BAYNK","Golden Vessel","Ark Patrol"],"venue":"Holocene","city":"Portland","conf":"confirmed","tour":"BAYNK’s winter 2019 US run, with Golden Vessel in support","record":null,"then":"BAYNK had no album out yet. Golden Vessel was three months from his own debut, SLOWSHINE.","since":"BAYNK’s debut album, Adolescence (2022), was nominated for Best Engineered Album at the 65th Grammys. He came back to headline the Doug Fir in January 2020 (also in this archive) and Wonder Ballroom in February 2025. Golden Vessel headlined the Doug Fir five months after this show.","ev":"Folder “BAYNK_Golden_vessel_ark_patrol”. Keyword “holocene”. Ark Patrol’s laptop is in frame.","src":[["BandSlate: Golden Vessel shows (Holocene, 28 Feb 2019, with BAYNK and Ark Patrol)","https://www.bandslate.com/band/golden-vessel"],["Sameer Sengupta: BAYNK, Adolescence (Grammy nomination)","https://www.sameersengupta.com/work/baynk-adolescence"],["Travel Portland: Baynk at Wonder Ballroom, 2025","https://www.travelportland.com/event/32010348856492/"]]},{"id":"S05","date":"2019-03-05","head":"Max Frost","bill":["Max Frost","mikey mike","UPSAHL"],"venue":"Hawthorne Theatre","city":"Portland","conf":"confirmed","tour":"Winter 2019 headline tour, with mikey mike and UPSAHL","record":"Gold Rush, his debut album (Oct 2018)","then":"Five months after his debut album and fresh off opening Twenty One Pilots’ Bandito Tour (2018). UPSAHL’s debut EP, Hindsight 20/20, came out three days later.","since":"Max Frost: Flying Machines (2022) and Shelby Ave (2025). UPSAHL: a songwriting credit on Dua Lipa’s “Good in Bed” and a major-label debut album, Lady Jesus (2021).","ev":"The Hawthorne’s marquee board (“5 MAX FROST”) is in frame. The folder says Wonder Ballroom, but the marquee shows the Hawthorne. UPSAHL is on the tour’s other bills.","src":[["FLOOD: Max Frost with Mikey Mike & UPSAHL (2019 tour)","http://chicago.floodmagazine.com/events/2019/3/16/max-frost-with-mikey-mike-and-upsahl"],["setlist.fm: Max Frost (Hawthorne Theatre)","https://www.setlist.fm/setlists/max-frost-43da7fdf.html"],["Wikipedia: Max Frost","https://en.wikipedia.org/wiki/Max_Frost"],["Wikipedia: Upsahl","https://en.wikipedia.org/wiki/Upsahl"]]},{"id":"S07","date":"2019-03-18","head":"Drew Loza","bill":["Drew Loza"],"venue":"Paris Theatre","city":"Portland","conf":"folder","tour":null,"record":null,"then":null,"since":null,"ev":"Folder “drew loza- paris theater”. Not checked against a listing.","src":[]},{"id":"S08","date":"2019-03-23","head":"Mt. Joy","bill":["Mt. Joy","Wilderado"],"venue":"Wonder Ballroom","city":"Portland","conf":"confirmed","tour":"Headlining tour, March–April 2019","record":"Mt. Joy (2018)","then":"Back in Portland three and a half months after KNRK’s December to Remember, after a winter opening for Rainbow Kitten Surprise.","since":"Wilderado: a self-titled debut album (2021), “Surefire” at No. 11 on Alternative Airplay, Jimmy Kimmel Live (2022), and “Wall of Death” on the Twisters soundtrack (2024).","ev":"Folders “mt joy - wonder ballroom” and “Wilderado”.","src":[["setlist.fm: Mt. Joy at Wonder Ballroom, 23 Mar 2019","https://www.setlist.fm/setlist/mt-joy/2019/wonder-ballroom-portland-or-4393bfaf.html"],["Wikipedia: Mt. Joy","https://en.wikipedia.org/wiki/Mt._Joy_(band)"],["Wikipedia: Wilderado","https://en.wikipedia.org/wiki/Wilderado"]]},{"id":"S09","date":"2019-04-02","head":"Lil Tracy","bill":["Lil Tracy"],"venue":"Paris Theatre","city":"Portland","conf":"confirmed","tour":null,"record":"EPs Designer Talk and Sinner (late 2018)","then":"A GothBoiClique member then best known for his Lil Peep collaborations. His debut album, Anarchy, was five months off.","since":"“Awful Things” with Lil Peep is now 2× Platinum. Anarchy (2019), Saturn Child (2022) and Babyvamp (2025).","ev":"Folder “Lil Tracy - Paris Theater”. His name is on the LED wall during the set.","src":[["Wikipedia: Lil Tracy","https://en.wikipedia.org/wiki/Lil_Tracy"]]},{"id":"S10","date":"2019-04-03","head":"TENDER","bill":["TENDER"],"venue":"Lola’s Room, Crystal Ballroom","city":"Portland","conf":"confirmed","tour":null,"record":null,"then":null,"since":null,"ev":"Folder “tendershow”. The Crystal Ballroom marquee listing TENDER is in frame.","src":[["Vortex: Tender at Lola’s Room, 3 Apr 2019","https://www.vrtxmag.com/media/photo/tender-at-lolas-room-on-april-3-2019/"]]},{"id":"S11","date":"2019-04-15","head":"SYML","bill":["SYML"],"venue":"Doug Fir Lounge","city":"Portland","conf":"confirmed","tour":null,"record":"His self-titled debut album, out 3 May 2019","then":"Eighteen days before his debut album. “Where’s My Love” had already spent 20 weeks on Billboard’s Hot Rock Songs chart after Teen Wolf.","since":"“Where’s My Love” is now 2× Platinum in the US. Lana Del Rey’s “Paris, Texas” (2023) is built on his song “I Wanted to Leave”. Since then: The Day My Father Died (2023) and Nobody Lives Here (2025).","ev":"Folder “101SYML0”. The Jupiter Hotel and Doug Fir signs are in frame.","src":[["Concertful: SYML, Portland","https://concertful.com/event/441101"],["Wikipedia: Syml","https://en.wikipedia.org/wiki/Syml"]]},{"id":"S12","date":"2019-04-24","head":"¿Téo?","bill":["¿Téo?"],"venue":"Holocene","city":"Portland","conf":"folder","tour":null,"record":null,"then":null,"since":null,"ev":"Folders “Teo - Holocene” and “Teo Openers - Holocene”. “¿Téo?” is on the backdrop.","src":[]},{"id":"S13","date":"2019-04-26","head":"Ages and Ages","bill":["Ages and Ages"],"venue":"Doug Fir Lounge","city":"Portland","conf":"confirmed","tour":null,"record":"Me You They We (2019)","then":"A Portland band, named Willamette Week’s Best New Band in 2011, playing at home in the year of their fourth album.","since":"A fifth album, Fine Thanks and You, in 2026.","ev":"Folder “Ages-and-Ages-Doug-Fir”. The Doug Fir marquee is in frame.","src":[["Wikipedia: Ages and Ages","https://en.wikipedia.org/wiki/Ages_and_Ages"]]},{"id":"S14","date":"2019-04-28","head":"The PALMS","bill":["The PALMS"],"venue":"Holocene","city":"Portland","conf":"folder","tour":null,"record":null,"then":null,"since":null,"ev":"Folder “The Palms - Holocene”. The band’s name is on the kick drum and the backdrop.","src":[]},{"id":"S15","date":"2019-05-22","head":"Mogli","bill":["Mogli"],"venue":"Holocene","city":"Portland","conf":"likely","tour":null,"record":null,"then":null,"since":null,"ev":"The folder spells it “Moglii”. A fan review on Mogli’s Bandsintown page describes a Holocene show on a Wednesday night that week, and 22 May 2019 was a Wednesday.","src":[["Bandsintown: Mogli","https://www.bandsintown.com/a/978672-mogli"]]},{"id":"S16","date":"2019-07-31","head":"Golden Vessel","bill":["Golden Vessel","Leo Islo","Instupendo"],"venue":"Doug Fir Lounge","city":"Portland","conf":"confirmed","tour":"Headline run after SLOWSHINE","record":"SLOWSHINE, his debut album (May 2019)","then":"Five months after supporting BAYNK at Holocene, headlining his own night two months after his debut album.","since":null,"ev":"The Doug Fir marquee reads “GOLDEN VESSEL WED”. Separate folders for Golden Vessel, Leo Islo and Instupendo.","src":[["Genius: Golden Vessel (SLOWSHINE, May 2019)","https://genius.com/artists/Golden-vessel"]]},{"id":"S17","date":"2019-08-23","head":"Japanese Breakfast","bill":["Japanese Breakfast","And And And","Bedouine"],"venue":"Crystal Ballroom","city":"Portland","conf":"confirmed","tour":"Soft Sounds from Another Planet Tour","record":"Soft Sounds from Another Planet (2017)","then":"The last stretch of a two-year tour for her second album, the night before the THING festival in Port Townsend.","since":"Jubilee (2021) earned Grammy nominations for Best New Artist and Best Alternative Music Album, and won Record of the Year at the Libera Awards. She scored the game Sable (2021). For Melancholy Brunettes (& Sad Women) (2025) reached No. 46 in the US.","ev":"Folders “japanese breakfast”, “and and and concert” and “belladue concert”, and the AND AND AND kick drum. Vortex lists Bedouine on the bill.","src":[["setlist.fm: Japanese Breakfast at Crystal Ballroom, 23 Aug 2019","https://www.setlist.fm/setlist/japanese-breakfast/2019/crystal-ballroom-portland-or-739f12d9.html"],["Vortex: Japanese Breakfast, And And And and Bedouine","https://www.vrtxmag.com/media/photo/japanese-breakfast-and-and-and-and-bedouine-at-crystal-ballroom-on-august-23-2019/"],["Wikipedia: Japanese Breakfast","https://en.wikipedia.org/wiki/Japanese_Breakfast"]]},{"id":"S18","date":"2019-09-13","head":"K.Flay","bill":["K.Flay"],"venue":"Crystal Ballroom","city":"Portland","conf":"confirmed","tour":"Solutions Tour","record":"Solutions (12 Jul 2019)","then":"Two months after Solutions, already a two-time Grammy nominee (2018, including Best Rock Song).","since":"Inside Voices / Outside Voices (2022). After losing the hearing in her right ear in 2022 she made Mono (2023), and she had a cochlear implant fitted in 2025. In 2026 she started a side project, 2XT.","ev":"Exported file named “kflay-DSC_0770”, with a capture date that matches the setlist.","src":[["setlist.fm: K.Flay at Crystal Ballroom, 13 Sep 2019 (Solutions Tour)","https://www.setlist.fm/setlist/kflay/2019/crystal-ballroom-portland-or-5b9c8700.html"],["Wikipedia: K.Flay","https://en.wikipedia.org/wiki/K.Flay"]]},{"id":"S19","date":"2019-09-15","head":"Oliver Tree","bill":["Oliver Tree","Tommy Cash","NVDES"],"venue":"Crystal Ballroom","city":"Portland","conf":"confirmed","tour":"Goodbye Farewell Tour","record":"Pre-album singles (“Alien Boy”, “Miracle Man”)","then":"Ten months before his debut album, playing the set from a wheelchair.","since":"Ugly Is Beautiful (2020) debuted at No. 14 on the Billboard 200 and No. 1 on Top Alternative Albums. “Life Goes On” (2021) and “Miss You” (2022) became global hits, and he played Red Rocks in 2023.","ev":"Folder “oliver tree exports”.","src":[["setlist.fm: Oliver Tree at Crystal Ballroom, 15 Sep 2019","https://www.setlist.fm/setlist/oliver-tree/2019/crystal-ballroom-portland-or-1b5575dc.html"],["Vortex: Oliver Tree, Tommy Cash and NVDES","https://www.vrtxmag.com/media/photo/oliver-tree-tommy-cash-and-nvdes-at-crystal-ballroom-on-sept-15-2019/"],["Wikipedia: Oliver Tree","https://en.wikipedia.org/wiki/Oliver_Tree"]]},{"id":"S20","date":"2019-09-30","head":"slenderbodies","bill":["slenderbodies"],"venue":"Holocene","city":"Portland","conf":"confirmed","tour":"Headlining US fall tour, sold out in Portland","record":"komorebi, their debut LP (2019)","then":"A sold-out Holocene on the tour for their debut LP.","since":null,"ev":"Folder “_Loosies”, keyword “slenderbodies”, and a capture date that matches the Holocene stop.","src":[["Concertful: slenderbodies at Holocene, 30 Sep 2019","https://concertful.com/tour/slenderbodies/past?page=3"],["Shore Fire: slenderbodies kick off headlining US fall tour","https://shorefire.com/releases/entry/slenderbodies-kick-off-headlining-u.s.-fall-tour"]]},{"id":"S21","date":"2019-10-06","head":"Charli XCX","bill":["Charli XCX","Brooke Candy"],"venue":"Roseland Theater","city":"Portland","conf":"confirmed","tour":"Charli Live Tour","record":"Charli (2019)","then":"Two weeks into the Charli Live Tour, supporting her third album.","since":"Crash (2022) was her first UK No. 1 album. Brat (2024) won three Grammys, including Best Dance/Electronic Album. It scored 95 on Metacritic, the highest of any 2024 album, and became the film The Moment (2026).","ev":"The full card is on FLORIDA_HD. A file named for Brooke Candy is stamped 20:12, inside the opening set; a file named for Charli XCX is stamped 21:16, inside the headline set. Frames are named by which set they fall in.","src":[["setlist.fm: Charli XCX at Roseland Theater, 6 Oct 2019","https://www.setlist.fm/setlist/charli-xcx/2019/roseland-theater-portland-or-2b9dbc6a.html"],["Wikipedia: Charli Live Tour","https://en.wikipedia.org/wiki/Charli_Live_Tour"],["Wikipedia: Charli XCX","https://en.wikipedia.org/wiki/Charli_XCX"],["Wikipedia: Charli Live Tour (Brooke Candy on the tour’s support bills)","https://en.wikipedia.org/wiki/Charli_Live_Tour"]]},{"id":"S20B","date":"2019-10-11","head":"Yoke Lore","bill":["Yoke Lore"],"venue":"Doug Fir Lounge","city":"Portland","conf":"confirmed","tour":"Fall 2019 headline run, sold out in Portland","record":"“Dead Ringer” (single, 27 Sep 2019)","then":"A sold-out Doug Fir two weeks after the single “Dead Ringer”.","since":null,"ev":"Finished edits named “yoke_lore” and “yoke-lore”, and 198 frames stamped 11 Oct 2019 on FLORIDA_HD. Not in the Lightroom catalog.","src":[["Killbeat Music: Yoke Lore returns with “Dead Ringer” (Doug Fir, sold out)","https://www.killbeatmusic.com/media-releases/2019/9/27/yoke-lore-returns-with-dead-ringer"],["Beyond the Stage: Yoke Lore, Portland, 10/11/2019","https://www.beyondthestagemagazine.com/photos-yoke-lore-portland-or-10-11-2019/"]]},{"id":"S22","date":"2019-10-30","head":"Electric Guest","bill":["Electric Guest","WAFIA"],"venue":"Wonder Ballroom","city":"Portland","conf":"confirmed","tour":"Fall 2019 tour","record":"Kin (18 Oct 2019)","then":"Twelve days after their third album, Kin. The opener, WAFIA, already had a Platinum single, “Better Not” with Louis the Child.","since":"Electric Guest: a fourth album, 10K (2025). WAFIA: the Good Things EP (2020) and her debut album, Promised Land (2025).","ev":"Folder “Electric Guest : WAFIA Concert”.","src":[["setlist.fm: Electric Guest at Wonder Ballroom, 30 Oct 2019","https://www.setlist.fm/setlist/electric-guest/2019/wonder-ballroom-portland-or-4b9d13ea.html"],["Oregon Music News: Electric Guest at Wonder Ballroom","https://www.oregonmusicnews.com/electric-guest-photos-review-wonder"],["Wikipedia: Electric Guest","https://en.wikipedia.org/wiki/Electric_Guest"],["Wikipedia: Wafia","https://en.wikipedia.org/wiki/Wafia"]]},{"id":"S23","date":"2019-11-06","head":"Mt. Joy","bill":["Mt. Joy"],"venue":"Crystal Ballroom","city":"Portland","conf":"confirmed","tour":"Fall 2019 tour, previewing new songs","record":"Mt. Joy (2018), with Rearrange Us on the way","then":"Their fourth Portland show in this archive in nineteen months, now headlining the Crystal, playing songs that would land on Rearrange Us.","since":"Rearrange Us (2020), Orange Blood (2022), Hope We Have Fun (2025). “Silver Lining” went Platinum.","ev":"Folder “Mt Joy Crystal Ballroom”. The MT. JOY banner is behind the late set.","src":[["setlist.fm: Mt. Joy at Crystal Ballroom, 6 Nov 2019","https://www.setlist.fm/setlist/mt-joy/2019/crystal-ballroom-portland-or-3b9d6050.html"],["Shore Fire: Mt. Joy will preview new music on fall 2019 tour","https://shorefire.com/releases/entry/mt.-joy-new-music-fall-2019-tour"]]},{"id":"S24A","date":"2019-12-06","head":"Act not identified","bill":[],"venue":null,"city":"Portland","conf":"unknown","tour":null,"record":null,"then":null,"since":null,"ev":"Nine finished black-and-white edits and 73 frames stamped 6 Dec 2019 on FLORIDA_HD, with no folder name or keyword. A singer-guitarist headliner and a band with a female lead singer. If you know who this was, it’s a one-line fix.","src":[]},{"id":"S24","date":"2019-12-16","head":"Local Natives","bill":["Local Natives","Pretty Gritty"],"venue":"Crystal Ballroom","city":"Portland","conf":"confirmed","tour":"Violet Street touring","record":"Violet Street (26 Apr 2019)","then":"Not an early show: this was their fourth album.","since":"Time Will Wait for No One (2023) and its companion, But I’ll Wait for You (2024). Co-founder Kelcey Ayer left in 2024, and the band returned to the stage in 2026.","ev":"Folders “Local Natives” and “Pretty Gritty”. Travel Portland lists the show at 1332 W Burnside, which is the Crystal Ballroom.","src":[["Travel Portland: Local Natives, 16 Dec 2019","https://www.travelportland.com/event/31938343765023"],["Wikipedia: Violet Street","https://en.wikipedia.org/wiki/Violet_Street"],["Wikipedia: Local Natives","https://en.wikipedia.org/wiki/Local_Natives"]]},{"id":"S25","date":"2020-01-10","head":"Dakota Theim","bill":["Dakota Theim"],"venue":null,"city":"Portland","conf":"partial","tour":null,"record":null,"then":"A Portland songwriter at a hometown show.","since":"His third album, Trail Ninety, came out in June 2026. Willamette Week wrote that he is helping define the “Portland sound”.","ev":"Folder “Dakota Theim/Selected”, keyword “dakota thiem”. The venue, with its painted mural backdrop, isn’t identified yet.","src":[["Willamette Week: Dakota Theim helps define the ‘Portland Sound’","https://www.wweek.com/music/2026/03/24/songwriter-dakota-theim-is-helping-define-the-portland-sound/"]]},{"id":"S26","date":"2020-01-24","head":"BAYNK","bill":["BAYNK","Nolie"],"venue":"Doug Fir Lounge","city":"Portland","conf":"confirmed","tour":"Winter 2020 tour, with Nolie in support","record":null,"then":"His second Portland show in this archive, eleven months after Holocene.","since":"Adolescence (2022) was nominated for Best Engineered Album at the 65th Grammys. He headlined Wonder Ballroom in February 2025.","ev":"Concertful lists BAYNK at the Doug Fir that night, and “Nolie” is on the screen behind the opener. First Avenue lists Nolie supporting BAYNK in February 2020.","src":[["Concertful: BAYNK at Doug Fir, 24 Jan 2020","https://concertful.com/tour/baynk/past?page=2"],["First Avenue: Nolie (with BAYNK, Feb 2020)","https://first-avenue.com/performer/nolie/"]]},{"id":"S27","date":"2020-02-13","head":"Dijon","bill":["Dijon"],"venue":"Holocene","city":"Portland","conf":"likely","tour":null,"record":"Sci Fi 1 EP (2019)","then":"No album out yet: one EP and a handful of singles. Absolutely was 21 months away.","since":"Absolutely (2021) and Baby (2025). He co-wrote and produced much of Justin Bieber’s Swag (2025), including the No. 2 single “Daisies”, which earned him Grammy nominations for Album of the Year and Producer of the Year. He made his acting debut in One Battle After Another (2025) and has headlined Portland’s Roseland Theater.","ev":"Folders “DIJON Archive” and “_MDMA_ZINE_ASSETS”. The faceted stage wall matches the Holocene frames from ¿Téo? and Zack Villere. The venue isn’t yet confirmed by a listing.","src":[["Wikipedia: Dijon","https://en.wikipedia.org/wiki/Dijon_Duenas"],["setlist.fm: Dijon at Roseland Theater, 2025","https://www.setlist.fm/setlist/dijon/2025/roseland-theater-portland-or-534fe7b9.html"]]},{"id":"S28","date":"2020-03-04","head":"Zack Villere","bill":["Zack Villere"],"venue":"Holocene","city":"Portland","conf":"confirmed","tour":"“Trevor Rice Is Not Going On Tour” tour","record":"Cardboard City (14 Feb 2020)","then":"Three weeks after his second album, days before the 2020 shutdown.","since":null,"ev":"Folder “Zack Villere”. The 2020 tour list includes Wed 4 Mar, Portland, Holocene.","src":[["BroadwayWorld: Zack Villere announces 2020 US tour","https://www.broadwayworld.com/bwwmusic/article/Zack-Villere-Shares-A-Feeling-Announces-2020-US-Tour-20191210"],["The Harvard Crimson: Zack Villere interview","https://www.thecrimson.com/article/2020/3/8/zack-villere-interview-article/"]]},{"id":"S29","date":"2020-03-06","head":"Drama","bill":["Drama","Ric Wilson"],"venue":"Wonder Ballroom","city":"Portland","conf":"confirmed","tour":"Dance Without Me tour","record":"Dance Without Me (14 Feb 2020)","then":"Three weeks after their debut album, on a tour the pandemic cut short. It was the last show in this archive before a thirteen-month gap.","since":"Drama: Chicago (2024), Platonic Romance (2026), Coachella in 2023 and 2026, and support slots for ODESZA and Coldplay. Ric Wilson released They Call Me Disco with Terrace Martin that spring and shared Drama’s Salt Shed bill in 2024.","ev":"Files named “DRAMA_wonder_ballroom”, keyword “wonder ballroom”. Ric Wilson’s name is on the merch table banner.","src":[["Wikipedia: Drama (American duo)","https://en.wikipedia.org/wiki/Drama_(American_duo)"],["Con Safos: Ric Wilson & Terrace Martin announce They Call Me Disco","https://consafosmag.com/2020/04/23/ric-wilson-terrace-martin-announce-collaborative-ep/"]]},{"id":"S30","date":"2021-04-17","head":"Crimes","bill":["Crimes"],"venue":null,"city":null,"conf":"folder","tour":null,"record":null,"then":null,"since":null,"ev":"Folder “crimes_concert”, 284 frames on the Nikon D850. There are no previews in the catalog yet, so it isn’t on the sheet.","src":[]},{"id":"S31","date":"2021-07-24","head":"New Constellations","bill":["New Constellations"],"venue":null,"city":null,"conf":"folder","tour":null,"record":null,"then":null,"since":null,"ev":"Folder “new_constellations_show”, 235 frames on the Nikon D850. There are no previews in the catalog yet.","src":[]},{"id":"S32","date":"2023-04-28","head":"New Constellations","bill":["New Constellations"],"venue":null,"city":"Portland","conf":"partial","tour":null,"record":"Lean In EP (2023)","then":"The Portland duo of Harlee Case and Josh Smith, in the year of their Lean In EP.","since":"They opened for Cannons at the Crystal Ballroom in August 2023. Their debut album, It Comes in Waves, came out on Nettwerk in May 2026.","ev":"Folder “New Constellations 2023”, 1,372 frames on the D850. The room isn’t identified yet.","src":[["Wikipedia: New Constellations","https://en.wikipedia.org/wiki/New_Constellations"],["Nettwerk: New Constellations unveil It Comes In Waves","https://nettwerk.com/news/portland-duo-new-constellations-unveil-their-debut-album-it-comes-in-waves"],["YouTube: New Constellations live at Crystal Ballroom, opening for Cannons","https://www.youtube.com/watch?v=VF8BXHAeY3A"]]},{"id":"S33","date":"2024-06-13","head":"Allan Rayman","bill":["Allan Rayman"],"venue":"Crescent Ballroom","city":"Phoenix","conf":"confirmed","tour":"The All Allan Hour tour","record":"The All Allan Hour (2024)","then":"Shot on an iPhone from the floor, on the tour for his sixth album.","since":null,"ev":"The GPS in the files places them in downtown Phoenix, and Superfan lists him at Crescent Ballroom that night. Folder “all allan tour”. iPhone 14 Pro.","src":[["Superfan: Allan Rayman, Phoenix, 13 Jun 2024","https://www.superfan.social/events/allan-rayman-phoenix-2024-06-13"],["Wikipedia: Allan Rayman","https://en.wikipedia.org/wiki/Allan_Rayman"]]},{"id":"S34","date":"2024-11-20","head":"New Constellations","bill":["New Constellations"],"venue":null,"city":null,"conf":"partial","tour":"West Coast run, November 2024","record":"Lean In EP (2023)","then":"On the road down the West Coast, eighteen months before their debut album.","since":"Their debut album, It Comes in Waves, came out on Nettwerk in May 2026.","ev":"Folder “New Constellations 2024”, 1,779 frames on the D850. The room, with its mirror ball, isn’t identified yet.","src":[["Wikipedia: New Constellations","https://en.wikipedia.org/wiki/New_Constellations"]]}];
+  // since the pit: artists shot early who went on to more. text paraphrases the sourced notes in SH.
+  var SINCE = [
+    ['S27','Dijon','Holocene · Feb 2020 · no album yet','Grammy nominations for Album and Producer of the Year for his work on Justin Bieber’s Swag. Two albums of his own, a film role, and a Roseland headline.'],
+    ['S21','Charli XCX','Roseland · Oct 2019 · Charli Live Tour','Brat: three Grammys and the year’s best-reviewed album.'],
+    ['S17','Japanese Breakfast','Crystal Ballroom · Aug 2019 · album two','Grammy nominations for Best New Artist and Best Alternative Music Album.'],
+    ['S02','Blu DeTiger','Wonder Ballroom opener · Jan 2019 · first single out three days','Forbes 30 Under 30, a Capitol debut album, Lollapalooza.'],
+    ['S19','Oliver Tree','Crystal Ballroom · Sep 2019 · no album yet','Debut album at No. 14 on the Billboard 200, “Life Goes On”, Red Rocks.'],
+    ['S04','BAYNK','Holocene · Feb 2019 · no album yet','A Grammy-nominated debut album. Back to headline the Doug Fir, then Wonder Ballroom.'],
+    ['S11','SYML','Doug Fir · Apr 2019 · debut album 18 days out','“Where’s My Love” went 2× Platinum, and his song is the basis of Lana Del Rey’s “Paris, Texas”.'],
+    ['S01','Mt. Joy','Doug Fir · Apr 2018 · five weeks after album one','Four Portland shows in nineteen months, all in this archive, from the Doug Fir to a Crystal headline. A Platinum single and three more albums since.']
+  ];
+
+  var MON = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  function fd(iso){ var p = iso.split('-'); return p[2] + ' ' + MON[+p[1]-1] + ' ' + p[0]; }
+  var MARK = 'M3 6 C30 2 70 3 97 4 C99 24 98 46 96 62 C70 65 31 64 5 62 C2 46 3 24 1 8 L9 3';
+  var CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+  var CONF = {confirmed:['ok','confirmed'], likely:['','likely'], partial:['','venue unknown'], folder:['','from folder'], unknown:['','act unknown']};
+  function img(f){ return 'img/f' + f.n + '.jpg'; }
+  function el(tag, cls, html){ var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  var byId = {}; SH.forEach(function(s){ byId[s.id] = s; s.frames = []; });
+  FR.sort(function(a, b){ var da = byId[a.s].date, db = byId[b.s].date; return da < db ? -1 : da > db ? 1 : ((a.t || '') < (b.t || '') ? -1 : (a.t || '') > (b.t || '') ? 1 : 0); });
+  FR.forEach(function(f, i){ f.i = i; byId[f.s].frames.push(f); });
+  function venueLine(s){ return s.venue ? s.venue + (s.city && s.city !== 'Portland' ? ', ' + s.city : '') : null; }
+  function stripHTML(f){
+    var s = byId[f.s], parts = [(f.act ? f.act + ' — ' : '') + (s.venue || 'room not identified'), fd(s.date)];
+    var h = '<span class="s">SESH</span><span class="sep" aria-hidden="true">▸</span>' + parts.map(function(p, i){ return (i ? '<span class="sep" aria-hidden="true">·</span>' : '') + '<span class="f">' + esc(p) + '</span>'; }).join('');
+    return h + '<span class="sp"></span><span class="n">' + (f.dsc ? '#' + f.dsc : f.n) + '</span>';
+  }
+  function cell(f, eager){
+    var b = el('button', 'cell' + (f.sel ? ' sel' : '')), s = byId[f.s];
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Open frame ' + (f.dsc ? f.dsc : f.n) + ', ' + (f.act || (s.conf === 'unknown' ? 'act not identified' : 'the ' + s.head + ' night')) + ', ' + fd(s.date).toLowerCase() + (f.sel ? ', select' : ''));
+    b.innerHTML = '<span class="reb"><span>' + (f.dsc ? '#' + f.dsc : f.n) + '</span><span>' + esc(f.act || fd(s.date)) + '</span></span>' +
+      '<span class="img"><img src="' + img(f) + '" alt="" width="' + f.w + '" height="' + f.h + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"></span>' +
+      '<span class="reb b"></span><svg class="mark" viewBox="0 0 100 66" preserveAspectRatio="none" aria-hidden="true"><path d="' + MARK + '"/></svg>';
+    b.addEventListener('click', function(){ open(f.i, b); });
+    return b;
+  }
+
+  // counts
+  var shown = SH.filter(function(s){ return s.frames.length; }).length;
+  document.getElementById('countline').textContent = FR.length + ' frames · ' + SH.length + ' shows · 2018–2024';
+
+  // the sheet
+  var grid = document.getElementById('sheetgrid');
+  FR.forEach(function(f, i){ var li = el('li'); li.appendChild(cell(f, i < 12)); grid.appendChild(li); });
+
+  // the index
+  var list = document.getElementById('shows');
+  SH.forEach(function(s){
+    var art = el('article', 'show'); art.id = 'show-' + s.id;
+    var c = CONF[s.conf] || ['', s.conf], others = s.bill.filter(function(b){ return b !== s.head; });
+    var btn = el('button', 'srow'); btn.type = 'button'; btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'sd-' + s.id);
+    btn.innerHTML = '<span class="d mono">' + fd(s.date) + '</span>' +
+      '<span class="who"><span class="h">' + esc(s.head) + '</span>' + (others.length ? ' <span class="bill">with ' + esc(others.join(', ')) + '</span>' : '') + '</span>' +
+      '<span class="where mono">' + (venueLine(s) ? '<span>' + esc(venueLine(s)) + '</span>' : '<i class="un">room not identified</i>') + '<span class="tag ' + c[0] + '"><i></i>' + c[1] + '</span></span>' +
+      '<span class="n mono"><span>' + (s.frames.length || '—') + '<span class="vh"> frames</span></span>' + CHEV + '</span>';
+    var det = el('div', 'sdet'); det.id = 'sd-' + s.id; det.hidden = true;
+    if (s.frames.length) { var th = el('div', 'thumbs'); s.frames.forEach(function(f){ th.appendChild(cell(f)); }); det.appendChild(th); }
+    var dl = el('dl', 'notes mono-free'), rows = [['tour', s.tour], ['touring', s.record], ['then', s.then], ['since', s.since]];
+    rows.forEach(function(r){ if (r[1]) dl.insertAdjacentHTML('beforeend', '<dt class="mono">' + r[0] + '</dt><dd>' + esc(r[1]) + '</dd>'); });
+    dl.insertAdjacentHTML('beforeend', '<dt class="mono">how we know</dt><dd class="ev">' + esc(s.ev) + '</dd>');
+    if (s.src.length) dl.insertAdjacentHTML('beforeend', '<dt class="mono">sources</dt><dd><ul>' + s.src.map(function(x){ return '<li><a href="' + esc(x[1]) + '" target="_blank" rel="noopener">' + esc(x[0]) + '</a></li>'; }).join('') + '</ul></dd>');
+    det.appendChild(dl);
+    btn.addEventListener('click', function(){ toggle(s.id); });
+    art.appendChild(btn); art.appendChild(det); list.appendChild(art);
+    s.node = art; s.btn = btn; s.det = det;
+    s.hay = [s.head, s.bill.join(' '), s.venue, s.city, s.tour, s.record].filter(Boolean).join(' ').toLowerCase();
+  });
+  function toggle(id, force){
+    var s = byId[id], on = force != null ? force : s.btn.getAttribute('aria-expanded') !== 'true';
+    s.btn.setAttribute('aria-expanded', on ? 'true' : 'false'); s.det.hidden = !on;
+  }
+  function reveal(id){
+    var s = byId[id]; if (!s) return;
+    if (s.node.hidden) { q.value = ''; year = 'all'; paintYears(); filter(); }
+    toggle(id, true); s.node.scrollIntoView({block:'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); s.btn.focus({preventScroll:true});
+  }
+
+  // filters
+  var q = document.getElementById('q'), year = 'all', YEARS = [['all','All'],['2018','2018'],['2019','2019'],['2020','2020'],['2021','2021–24']];
+  var yg = document.getElementById('years');
+  YEARS.forEach(function(y){ var b = el('button', null, y[1]); b.type = 'button'; b.dataset.y = y[0]; b.addEventListener('click', function(){ year = y[0]; paintYears(); filter(); }); yg.appendChild(b); });
+  function paintYears(){ [].forEach.call(yg.children, function(b){ b.setAttribute('aria-pressed', b.dataset.y === year ? 'true' : 'false'); }); }
+  function filter(){
+    var t = q.value.trim().toLowerCase(), n = 0, f = 0;
+    SH.forEach(function(s){
+      var y = +s.date.slice(0, 4), okY = year === 'all' || (year === '2021' ? y >= 2021 : y === +year);
+      var ok = okY && (!t || s.hay.indexOf(t) >= 0); s.node.hidden = !ok; if (ok) { n++; f += s.frames.length; }
+    });
+    document.getElementById('idxcount').textContent = n + (n === 1 ? ' show' : ' shows') + ' · ' + f + ' frames';
+    document.getElementById('empty').hidden = n > 0;
+  }
+  q.addEventListener('input', filter);
+  paintYears(); filter();
+  // rooms most shot
+  var rc = {}; SH.forEach(function(s){ if (s.venue) { var v = s.venue.replace(/^Lola’s Room, /, ''); rc[v] = (rc[v] || 0) + 1; } });
+  var rooms = document.getElementById('rooms');
+  Object.keys(rc).filter(function(v){ return rc[v] > 1; }).sort(function(a, b){ return rc[b] - rc[a]; }).forEach(function(v){
+    var b = el('button', null, esc(v) + ' · ' + rc[v]); b.type = 'button'; b.setAttribute('aria-label', 'Show ' + v + ' shows, ' + rc[v]);
+    b.addEventListener('click', function(){ q.value = v.toLowerCase(); year = 'all'; paintYears(); filter(); }); rooms.appendChild(b);
+  });
+
+  // since the pit
+  var sl = document.getElementById('sincelist');
+  SINCE.forEach(function(x){
+    var li = el('li'), b = el('button'); b.type = 'button';
+    b.innerHTML = '<span class="who">' + esc(x[1]) + '</span><span class="then mono">' + esc(x[2]) + '</span><span class="now">' + esc(x[3]) + '</span>';
+    b.addEventListener('click', function(){ reveal(x[0]); });
+    li.appendChild(b); sl.appendChild(li);
+  });
+
+  // lightbox
+  var lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg'), cur = 0, last = null;
+  function show(i){
+    cur = (i + FR.length) % FR.length; var f = FR[cur], s = byId[f.s];
+    lbimg.classList.add('loading'); lbimg.onload = function(){ lbimg.classList.remove('loading'); };
+    lbimg.src = img(f); lbimg.alt = (f.act || (s.conf === 'unknown' ? 'A set, act not identified,' : 'A set from the ' + s.head + ' night')) + ' at ' + (s.venue || 'an unidentified room') + ', ' + fd(s.date).toLowerCase();
+    document.getElementById('lbcount').textContent = String(cur + 1).padStart(2, '0') + ' / ' + FR.length;
+    document.getElementById('lbstrip').innerHTML = stripHTML(f);
+    var others = s.bill.filter(function(b){ return b !== s.head; }), t = [s.conf === 'unknown' ? 'Act not identified.' : 'The ' + s.head + ' night' + (others.length ? ', with ' + others.join(', ') : '') + '.' + (f.act ? '' : ' Set not identified.')];
+    if (s.tour) t.push(s.tour + '.');
+    if (s.then) t.push(s.then);
+    document.getElementById('lbtext').textContent = t.join(' ');
+    [1, -1].forEach(function(d){ var p = new Image(); p.src = img(FR[(cur + d + FR.length) % FR.length]); });
+  }
+  function open(i, from){ last = from || document.activeElement; show(i); lb.hidden = false; document.documentElement.style.overflow = 'hidden'; document.getElementById('lbclose').focus(); }
+  function close(){ lb.hidden = true; document.documentElement.style.overflow = ''; if (last && last.focus) last.focus({preventScroll:true}); }
+  document.getElementById('lbclose').addEventListener('click', close);
+  document.getElementById('lbprev').addEventListener('click', function(){ show(cur - 1); });
+  document.getElementById('lbnext').addEventListener('click', function(){ show(cur + 1); });
+  document.getElementById('lbshow').addEventListener('click', function(){ var id = FR[cur].s; close(); reveal(id); });
+  document.addEventListener('keydown', function(e){
+    if (lb.hidden) return;
+    if (e.key === 'Escape') { e.preventDefault(); close(); }
+    else if (e.key === 'ArrowRight') show(cur + 1);
+    else if (e.key === 'ArrowLeft') show(cur - 1);
+    else if (e.key === 'Tab') {
+      var fs = lb.querySelectorAll('button'), a = fs[0], z = fs[fs.length - 1];
+      if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+      else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+    }
+  });
+  var sx = null, stage = document.getElementById('lbstage');
+  stage.addEventListener('pointerdown', function(e){ sx = e.clientX; });
+  stage.addEventListener('pointerup', function(e){ if (sx == null) return; var dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 48) show(cur + (dx < 0 ? 1 : -1)); });
+  stage.addEventListener('click', function(e){ if (e.target === stage) close(); });
+
+  // deep links: #frame-012 opens a frame, #show-S19 opens a show's notes
+  var m = /^#frame-(v?\d{3})$/.exec(location.hash), k = m ? FR.findIndex(function(f){ return f.n === m[1]; }) : -1;
+  if (k >= 0) open(k);
+  var ms = /^#show-(S\d\d[AB]?)$/.exec(location.hash); if (ms && byId[ms[1]]) setTimeout(function(){ reveal(ms[1]); }, 60);
+
+  // copy email
+  var toast = document.getElementById('toast'), tt;
+  function say(msg){ document.getElementById('toastmsg').textContent = msg; toast.hidden = false; clearTimeout(tt); tt = setTimeout(function(){ toast.hidden = true; }, 2200); }
+  function selectMail(){ var r = document.createRange(); r.selectNodeContents(document.getElementById('mail')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  document.getElementById('copy').addEventListener('click', function(){
+    var t = document.getElementById('mail').textContent;
+    try { navigator.clipboard.writeText(t).then(function(){ say('Email copied.'); }, function(){ selectMail(); say('Email selected. Press copy to finish.'); }); }
+    catch (err) { selectMail(); say('Email selected. Press copy to finish.'); }
+  });
+})();
+</script>
+
+</body></html>
